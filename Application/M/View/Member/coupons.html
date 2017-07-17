@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+
+        .list-block {
+            overflow: hidden;
+            margin: 0;
+            font-size: .85rem;
+        }
+
+        .scri_title img{
+            float: right;
+            width: 1.1rem;
+        }
+        .scri_text{
+            margin-left: 0.25rem;
+            float: right;
+        }
+        .ticket_title{
+            margin: 0.35rem 0.85rem;
+        }
+
+        .ticket_item{
+            padding: 0 0.85rem;
+        }
+        .ticket_item img{
+            width: 100%;
+        }
+        .ticket_item div{
+            color: #fff;
+            font-size: 0.85rem;
+            padding-left: 29%;
+            padding-top: 4%;
+        }
+        
+        .ticket_item_text>span{
+            display: block;
+        }
+        
+        .ticket_item_text>span:first-child{
+            font-size: 1rem;
+        }
+
+
+        /*规则弹窗*/
+        .modal {
+            top: 50%;
+            left: 37.5%;
+            width: 90%;
+        }
+        .modal p {
+            margin: 1em 0;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+            <span class="icon icon-left"></span>
+        </a>
+        <h1 class="title">代金券</h1>
+    </header>
+    <div class="content">
+        <div class="list-block ticket_title">
+            <div class="scri_text"><a href="#" style="color: #a7a7a7;" class="open-slider-modal">使用规则</a></div>
+            <div class="scri_title"><span><img src="{$resource_path}/image/ticket_image/001.png" alt=""></span></div>
+
+        </div>
+        <div class="list-block ticket_item" >
+            
+            <volist name="coupons" id="vo">
+            <div class="ticket_item_text" style='margin-bottom: 0.5rem;background: url("{$vo['thumb']}") no-repeat; width: 100%;height: 5.6rem;background-size: contain;'>
+                <span>立减红包 <span>(单笔订单立减{$vo['coupon_value']})</span></span>
+                <span>有效期：<span>{$vo['ctime']|date="Y.m.d",###}-{$vo['etime']|date="Y.m.d",###}</span></span>
+                <if condition="$vo['isvalid'] eq '0'">
+                    <span>状态：<span style="color:#c72b2c;">已过期</span></span>
+                </if>
+
+            </div>
+            </volist>
+           
+        </div>
+
+    </div>
+</div>
+<include file="Common/footer" />
+
+<script>
+    $(document).on('click','.open-slider-modal', function () {
+        var modal = $.modal({
+            title: '使用规则',
+            text: '',
+            afterText:  `
+                        <p>
+                            1.代金券面值。10元、20元、50元，100元、200元。<br/>
+
+                            2.新用户关注即送代金券200元，消费满2000 元可使用该代金券减免 200 元。<br/>
+
+                            3.代金券不可折成现金使用或退还。<br/>
+
+                            4.客户租赁不能使用代金券抵扣。<br/>
+
+                            5.用户每浏览商城1次（每天浏览多次算一次），即送积分20分，租赁消费一次送积分200分，购买消费一次送积分500分，积分满500分可兑换面值10元代金券一张。以此类推。
+
+                            <br/>6.代金券不限使用期限。<br/>
+
+                            7.代金券不能叠加使用。<br/>
+
+                            8.该代金券不可与其他优惠促销活动同用。<br/>
+
+                            9.该代金券活动最终解释权归珍宝斋艺术馆所有。<br/>
+
+                        </p>
+                `
+                        ,
+            buttons: [
+                {
+                    text: '知道了'
+                }
+            ]
+        })
+        $.swiper($$(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});
+    });
+</script>
+</body>
+</html>

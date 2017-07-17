@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        
+        a{
+            color:#3d4145;
+        }
+        
+        </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" >
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" onclick="javascript:history.go(-1);">
+                <span class="icon icon-left"></span>
+
+            </a>
+            <h1 class="title">
+                {$result.keywords_cn}
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+
+        <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-content-inner">
+                       {$result.content|html_entity_decode}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

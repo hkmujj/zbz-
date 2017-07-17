@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <include file="Common/head" />
+    <link rel="stylesheet" href="{$resource_path}/light7/css/swiper.min.css">
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+            .nav a{
+                margin: 0 3.4%;
+            }
+            .scanning{
+                margin-left: 2%;
+                margin-right: 1%;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+            .nav a{
+                margin: 0 3.4%;
+            }
+            .scanning{
+                margin-left: 2%;
+                margin-right: 1%;
+            }
+        }
+        @media only screen and (min-width: 360px) {
+            html {
+                font-size: 18px !important;
+            }
+            .nav a{
+                margin: 0 3%;
+            }
+            .scanning{
+                margin: 0 3.5%;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+            .nav a{
+                margin: 0 3.8%;
+            }
+            .scanning{
+                margin: 0 3.5%;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+            .nav a{
+                margin: 0 3.8%;
+            }
+            .scanning{
+                margin: 0 3.5%;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        /*list部分*/
+        .list-block {
+            background: white;
+            /*margin: .55rem 0;*/
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+        .bar-tab {
+            position: fixed;
+            bottom: 0;
+        }
+        /*搜索部分*/
+        .searchbar {
+            height: 2.5rem;
+            padding: 0.5rem 1rem;
+            background: #c72b2c;
+            font-size: 0.7rem;
+        }
+        .address{
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-top: 1.8%;
+            color: #fff;
+            float: left;
+        }
+        .searc{
+            float: left;
+            width: 58%;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            background: #fff;
+            border-radius: 1rem;
+            text-align: center;
+            color: #8f949a;
+        }
+        .buyCart{
+            font-size: 1rem;
+        }
+        .scanning{
+            display: inline-block;
+            /*margin: 0 3.5%;*/
+        }
+        .scanning img{
+            display: inline-block;
+            margin-top: 2%;
+        }
+        /*nav导航*/
+        .nav{
+            height: 2rem;
+            line-height: 2rem;
+        }
+        .nav a{
+            color: #333333;
+            font-size: 0.8rem;
+            display: inline-block;
+            /*margin: 0 3.8%;*/
+            text-align: center;
+        }
+        /*banner*/
+        .swiper-container {
+            padding-bottom: 0px;
+        }
+        /*租画*/
+        .rent_paint{
+            width: 100%;
+
+        }
+        .rent_shade{
+            width: 100%;
+            /*height: 100%;*/
+            background: rgba(76, 75, 72, 0.25);
+            /*padding-top: 25%;*/
+        }
+        .rent_shade span{
+            display: block;
+        }
+        .rent_shade span img{
+            display: block;
+            margin: 0 auto;
+            width: 6rem;
+            height: 1.4rem;
+        }
+        /*工具栏*/
+        /*fix_bottom*/
+        .row .col-25 {
+            width: 21%;
+            margin: 0 2%;
+        }
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4.3rem;
+            background: white;
+            z-index: 1000;
+        }
+        .fix_bottom a.col-25{
+            color: #333333;
+            padding: 0.35rem 0;
+            height: 2.8rem;
+            text-align: center;
+            display: block;
+        }
+        .fix_bottom a.col-25 span{
+
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .fix_bottom a.col-25 div{
+            font-size: 0.6rem;
+        }
+        .fix_bottom a.col-25 span img{
+            display: block;
+            margin: 0 auto;
+            width: 1.3rem;
+        }
+        .active_title{
+            color: #c72b2c!important;
+        }
+        .fix_bottom a.col-25 span:first-child{
+            width: 1.3rem;
+            height: 1.3rem;
+            margin: 0 auto;
+        }
+        .one{
+            background: url("{$resource_path}/image/index_image/001.png");
+            background-size: contain;
+        }
+        .one_h{
+            background: url("{$resource_path}/image/index_image/002.png")!important;
+            background-size: contain!important;
+        }
+        .two{
+             background: url("{$resource_path}/image/index_image/003.png");
+             background-size: contain;
+        }
+        .two_h{
+            background: url("{$resource_path}/image/index_image/004.png")!important;
+            background-size: contain!important;
+        }
+        .three{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .three_h{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .four{
+            background: url("{$resource_path}/image/index_image/007.png");
+            background-size: contain;
+        }
+        .four_h{
+            background: url("{$resource_path}/image/index_image/007.png");
+            background-size: contain;
+        }
+
+        /*弹出层样式*/
+        .top{
+            overflow: hidden;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px dashed #777777;
+        }
+        .china_paint{
+            float: left;
+        }
+        .china_paint img{
+            display: block;
+            width: 5rem;
+            height: 5rem;
+        }
+        .modal {
+            width: 18rem;
+            top: 50%;
+            left: 39%;
+        }
+        .btn_item {
+            width: 55% !important;
+            margin-left: 36%;
+        }
+        .button {
+            height: 1.8rem;
+            line-height: 1.8rem;
+            border: 1px solid #e2e2e2;
+            color: #777777;
+            margin: 0.3rem 0;
+        }
+        .button.active, .button.active:active {
+            color: #c72b2c;
+            border-color: #e9aaab;
+        }
+        .modal-buttons {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            display: inline-block;
+            height: 1.5rem;
+            width: 1.5rem;
+
+        }
+        .modal-button{
+            background: none;
+            border-right: none;
+            padding: 0rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .modal-inner {
+            background: #e8e8e8;
+            border-bottom: 0px solid #b5b5b5;
+            border-radius: 0.35rem;
+            padding-bottom: 1rem;
+        }
+        
+        .phone_call{
+            height: 1.5rem;
+            position: absolute;
+            bottom: 3px;
+            width: 100%;
+            color: #333333;
+            text-align: center;
+            border-top:1px solid #eee;
+        }
+        .phone_call a{
+            color:#333333;
+            font-size: 0.8rem;
+        }
+
+        .block_title{
+            text-align: center;
+            padding: 0.2rem 0;
+            color:#333333;
+            font-size:1rem;
+        }
+        
+        /*艺术家排行榜*/
+        
+        .artists{
+            /*height: 110px;*/
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: none;
+        }
+        .artist_item{
+            margin-right:0.7rem;
+            clear: both;
+            width: 120px;
+            background-color: white;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        
+        .art_text{
+            font-size: 0.75rem;
+            color: #999;
+            position: relative;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .art_text p{
+            margin: 0;
+            
+        }
+        .art_text span{
+            font-size: 0.6rem;
+        }
+        .art_text .art_name{
+            color: #222;
+            font-size: 0.7rem;
+        }
+        .art_text .art_name span{
+            color:#999;
+        }
+        
+        /*装饰风格*/
+        
+        .paint_style{
+            height: 120px;
+            padding: 0 15px 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: none;
+        }
+        .paint_style_item{
+            /*margin-right:5px;*/
+            clear: both;
+            width: 100%;
+            background-color: white;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        .paint_style_text{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            width: 100%;
+        }
+        
+        .paint_style_text span{
+            display: inline-block;
+            /*height: 100%;*/
+            vertical-align: middle;
+        }
+        
+        .paint_style_text p{
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .art_item_show{
+            position: relative;
+            background-color: #fff;
+            color:#222;
+        }
+        
+        .art_item_text{
+            display: flex;
+            height: 96%;
+            width: 100%;
+        }
+        
+        .art_item_text span{
+            display: inline-block;
+            /*height: 100%;*/
+            vertical-align: middle;
+        }
+        
+        .art_item_text p{
+            display: block;
+            width: 100%;
+            vertical-align: middle;
+            font-size: 0.7rem;
+            color: #222;
+            margin: 0;
+            padding: 4px 4px 0 4px;
+        }
+        .art_item_text p span{
+            font-size: 0.6rem;
+            color: #999;
+        }
+        
+	
+        
+        
+
+
+</style>
+</head>
+<body>
+<div class="page">
+    <div class="content scroll" style="position:absolute; overflow:scroll; -webkit-overflow-scrolling: touch; top:0; left:0; bottom:0; right:0">
+        <!--底部导航-->
+        <div class="list-block fix_bottom row nav_bar">
+            <a href="#" class="col-25 active_title">
+                <span class="one_h">
+                </span>
+                <div>首页</div>
+            </a>
+            <a href="{:U('Work/rent')}" class="col-25">
+                <span class="two"></span>
+                <div>租画</div>
+            </a>
+            <a href="{:U('Work/buy')}" class="col-25">
+                <span class="three"></span>
+                <div>买画</div>
+            </a>
+            <a href="{:U('Member/index')}" class="col-25">
+                <span class="four"></span>
+                <div>我的</div>
+            </a>
+            
+            <div class="phone_call">
+                <a href="tel:4000930004">客服电话: <font color="#c72b2c">4000-93-0004</font></a>
+            </div>
+        </div>
+        <!--顶部搜索栏-->
+        <div class="list-block search">
+            <div class="searchbar">
+                <a href="{:U('city_pick')}" class="address pull-left">{$cityname} <span class="icon icon-down"></span></a>
+                <a href="{:U('search/index')}">
+                    <div class="searc"><span class="icon icon-search"></span> 请输入您搜索的关键词</div>
+                </a>
+                <a href="{:U('Shoppingcart/index')}" class="buyCart pull-right"><img src="{$resource_path}/image/index_image/011.png" alt="" width="25"></a>
+                <a href="{:U('scan')}" class="scanning pull-right"><img src="{$resource_path}/image/index_image/010.png" alt="" width="25"></a>
+               
+            </div>
+        </div>
+        <!--顶部导航-->
+        <div class="list-block nav">
+            <a href="{:U('gallery/lists')}" >线下体验中心</a>
+            <a href="{:U('Work/diy_sort')}" >私人订制</a>
+            <a href="{:U('Artist/lists')}" >艺术家</a>
+            <a href="{:U('Index/news_lists')}" >新闻中心</a>
+        </div>
+        <!--banner-->
+        <div class="list-block banner">
+            <div class="swiper-container swiper-container-banner" data-space-between='0' data-pagination='.swiper-pagination' data-autoplay="1500" >
+                <div class="swiper-wrapper">
+                    <volist name='banners' id='vo'>
+                        <div class="swiper-slide">
+                            <a href="{$vo['url']}"><img src="{$vo['thumb']}" alt="" style="width:100%;height:9.5rem"></a></div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <div class="list-block block_title  open-slider-modal_div" style="color:#c72b2c;">- 租画 -</div>
+        <div class="list-block rent_paint open-slider-modal open-slider-modal_div" style="background:url({$index_setting['rent']['thumb']}); background-size:100%; height: 50%;">
+
+             <div class="rent_shade ">
+                 <span></span>
+             </div>
+        </div>
+        <div class="list-block block_title  open-slider-modal1_div" style="color:#c72b2c;">- 买画 -</div>
+        <div class="list-block rent_paint open-slider-modal1 open-slider-modal_div" style="background:url({$index_setting['buy']['thumb']});background-size:100%; height: 50%;">
+
+            <div class="rent_shade ">
+                <span></span>
+            </div>
+        </div>
+        <div class="list-block block_title">- 艺术家排行榜 -</div>
+        
+        
+        <div class="list-block banner" style=''>
+            <div class="swiper-container" id='swiper-container-artists' >
+                <div class="swiper-wrapper">
+                      <volist name='artists' id='art_vo'>
+                        <div class="swiper-slide">
+                            <a href="{:U('Artist/detail')}?id={$art_vo.artist_id}&from_src=index">
+                                <div class="paint_style_item">
+                                  <img src="{$art_vo.thumb}" style='width:100%; height: 100%;' />
+                                  <div class="art_item_text art_item_show" >
+                                      <p>{$art_vo.artist_name} &nbsp;&nbsp;<span style='color:#c72b2c;'>{$art_vo['fellowed_count']}</span>
+                                          <span >位粉丝</span></p>
+                                      
+                                  </div>
+                                  <div class="art_item_text art_item_show" >
+                                      
+                                      <p>
+                                            <span >{$art_vo['view_count']}</span>
+                                            <span >人浏览&nbsp;&nbsp;</span>
+
+                                        </p>
+                                  </div>
+                              </div>  
+                            </a>
+                        </div>
+                    </volist>  
+
+                </div>
+            </div>
+        </div>
+        <div class="list-block block_title">- 装饰风格 -</div>
+        <div class="list-block banner" style=''>
+                <div class="swiper-container" id='swiper-container' >
+                    <div class="swiper-wrapper">
+                          <volist name='show_types' id='show_types_vo'>
+                            <div class="swiper-slide">
+                                <a href="{:U('Work/paint_styles')}?id={$show_types_vo.id}">
+                                    <div class="paint_style_item">
+                                      <img src="{$show_types_vo.thumb}" style='width:100%; height: 100%;' />
+                                      <div class="paint_style_text" >
+                                          <span></span>
+                                          <p>{$show_types_vo['keywords']}</p>
+                                      </div>
+                                  </div>  
+                                </a>
+                            </div>
+                        </volist>  
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-block" style="height: 5rem"></div>
+        </div>
+</div>
+
+<include file="Common/footer" />
+<script type='text/javascript' src='{$resource_path}/light7/js/swiper-3.4.2.jquery.min.js' charset='utf-8'></script>
+<!-- Initialize Swiper -->
+    <script>
+    var swiper1 = new Swiper('#swiper-container-artists', {
+        slidesPerView: 3,
+        spaceBetween: 5,
+    });
+    
+    var swiper2 = new Swiper('#swiper-container', {
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 5,
+        autoplay : 2000,
+    });
+   
+    </script>
+<script>
+    wx.ready(function () {
+        wx.getLocation({
+        type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+        success: function (res) {
+            var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+            var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+//                            var speed = res.speed; // 速度，以米/每秒计
+//                            var accuracy = res.accuracy; // 位置精度
+
+//                            alert(latitude);
+
+//                            修改地址
+             $.post("{:U('update_mid_location')}", "lat="+latitude+"&lng="+longitude, function (data) {
+            if (data.err == 0) {
+                console.log("OK")
+
+            } else {
+
+            }
+        }, "json"); 
+
+        }
+    });
+    });
+</script>
+
+<script>
+    $(function () {
+        
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {  //判断iPhone|iPad|iPod|iOS
+            //alert(navigator.userAgent);  
+            var img1 = new Image();
+            var img_url1 = "{$index_setting['rent']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img1.src = img_url1;
+            // 加载完成执行
+            img1.onload = function(){
+                $(".open-slider-modal").css("height",img1.height/2+"px"); 
+            };
+
+            var img2 = new Image();
+            var img_url2 = "{$index_setting['buy']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img2.src = img_url2;
+            // 加载完成执行
+            img2.onload = function(){
+                $(".open-slider-modal1").css("height",img2.height/2+"px"); 
+            };
+
+            var img3 = new Image();
+            var img_url3 = "{$index_setting['show']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img3.src = img_url3;
+            // 加载完成执行
+            img3.onload = function(){
+                $(".open-slider-modal2").css("height",img3.height/2+"px"); 
+
+
+            }
+        } else if (/(Android)/i.test(navigator.userAgent)) {   //判断Android
+            //alert(navigator.userAgent); 
+            var img1 = new Image();
+            var img_url1 = "{$index_setting['rent']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img1.src = img_url1;
+            // 加载完成执行
+            img1.onload = function(){
+                $(".open-slider-modal").css("height",img1.height/2*0.96+"px"); 
+            };
+
+            var img2 = new Image();
+            var img_url2 = "{$index_setting['buy']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img2.src = img_url2;
+            // 加载完成执行
+            img2.onload = function(){
+                $(".open-slider-modal1").css("height",img2.height/2*0.96+"px"); 
+            };
+
+            var img3 = new Image();
+            var img_url3 = "{$index_setting['show']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img3.src = img_url3;
+            // 加载完成执行
+            img3.onload = function(){
+                $(".open-slider-modal2").css("height",img3.height/2*0.96+"px"); 
+
+
+            }
+        } else {  //pc
+            var img1 = new Image();
+            var img_url1 = "{$index_setting['rent']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img1.src = img_url1;
+            // 加载完成执行
+            img1.onload = function(){
+                $(".open-slider-modal").css("height",img1.height/2*0.96+"px"); 
+            };
+
+            var img2 = new Image();
+            var img_url2 = "{$index_setting['buy']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img2.src = img_url2;
+            // 加载完成执行
+            img2.onload = function(){
+                $(".open-slider-modal1").css("height",img2.height/2*0.96+"px"); 
+            };
+
+            var img3 = new Image();
+            var img_url3 = "{$index_setting['show']['thumb']}?"+Date.parse(new Date());
+            // 改变图片的src
+            img3.src = img_url3;
+            // 加载完成执行
+            img3.onload = function(){
+                $(".open-slider-modal2").css("height",img3.height/2*0.96+"px"); 
+
+
+            }
+        };
+
+        
+        
+        $(document).on('click','.open-slider-modal_div', function () {
+            $.modal({
+                title: '选择你喜欢的类型',
+                text: '<div class="top">'+
+                            '<div class="china_paint"><img src="{$resource_path}/image/layer_image/002.png" alt=""></div>'+
+                            '<div class="btn_item row">'+
+                                <volist name="cat1" id="vo">
+                                '<span class="button col-50"><a href="{:U("Work/rent")}?cat_id={$vo.cat_id}" style="color:#777777; display: block;">{$vo.name}</a></span>'+
+                                </volist>
+                            '</div>'+
+                        '</div>'+
+                        '<div class="bottom">'+
+                            '<div class="china_paint"><img src="{$resource_path}/image/layer_image/003.png" alt=""></div>'+
+                            '<div class="btn_item row">'+
+                                <volist name="cat2" id="voo">
+                                '<span class="button col-50"><a href="{:U("Work/rent")}?cat_id={$voo.cat_id}" style="color:#777777; display: block;">{$voo.name}</a></span>'+
+                                </volist>
+                            '</div>'+
+                        '</div>',
+                buttons: [
+                    {
+                        text: '<img src="{$resource_path}/image/layer_image/001.png" style="width: 1rem;height: 1rem">',
+                        bold: true
+                    },
+                ]
+            })
+        });
+
+
+        $(document).on('click','.open-slider-modal1_div', function () {
+            $.modal({
+                title: '选择你喜欢的类型',
+                text: '<div class="top">'+
+                            '<div class="china_paint"><img src="{$resource_path}/image/layer_image/002.png" alt=""></div>'+
+                            '<div class="btn_item row">'+
+                                <volist name="cat1" id="vooo">
+                                '<span class="button col-50"><a href="{:U("Work/buy")}?cat_id={$vooo.cat_id}" style="color:#777777; display: block;">{$vooo.name}</a></span>'+
+                                </volist>
+                            '</div>'+
+                        '</div>'+
+                        '<div class="bottom">'+
+                            '<div class="china_paint"><img src="{$resource_path}/image/layer_image/003.png" alt=""></div>'+
+                            '<div class="btn_item row">'+
+                                <volist name="cat2" id="voooo">
+                                '<span class="button col-50"><a href="{:U("Work/buy")}?cat_id={$voooo.cat_id}" style="color:#777777; display: block;">{$voooo.name}</a></span>'+
+                                </volist>
+                            '</div>'+
+                        '</div>',
+                buttons: [
+                    {
+                        text: '<img src="{$resource_path}/image/layer_image/001.png" style="width: 1rem;height: 1rem">',
+                        bold: true
+                    },
+                ]
+            })
+        });
+        
+        $(document).on('click','.open-slider-modal2', function () {
+            $.modal({
+                title: '选择你喜欢的类型',
+                text: '<div class="bottom">'+
+                            '<div class="btn_item row" style="margin-left:3%; width:100% !important;">'+
+                                <volist name="show_types" id="voooo">
+                                '<span class="button col-30" style="margin:0 0 0 1rem;"><a href="{:U("Work/show_type")}?id={$voooo.id}" style="color:#777777; display: block;">{$voooo.keywords}</a></span>'+
+                                </volist>
+                            '</div>'+
+                        '</div>',
+                buttons: [
+                    {
+                        text: '<img src="{$resource_path}/image/layer_image/001.png" style="width: 1rem;height: 1rem">',
+                        bold: true
+                    },
+                ]
+            })
+        });
+
+//        点选类型
+        $(document).on('click',".btn_item span",function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            
+        });
+
+    })
+</script>
+<script>
+    var overscroll = function(el) {
+        el.addEventListener('touchstart', function() {
+            var top = el.scrollTop
+                    , totalScroll = el.scrollHeight
+                    , currentScroll = top + el.offsetHeight
+            //If we're at the top or the bottom of the containers
+            //scroll, push up or down one pixel.
+            //
+            //this prevents the scroll from "passing through" to
+            //the body.
+            if(top === 0) {
+                el.scrollTop = 1
+            } else if(currentScroll === totalScroll) {
+                el.scrollTop = top - 1
+            }
+        });
+        el.addEventListener('touchmove', function(evt) {
+            //if the content is actually scrollable, i.e. the content is long enough
+            //that scrolling can occur
+            if(el.offsetHeight < el.scrollHeight)
+                evt._isScroller = true
+        })
+    };
+    overscroll(document.querySelector('.scroll'));
+    document.body.addEventListener('touchmove', function(evt) {
+        //In this case, the default behavior is scrolling the body, which
+        //would result in an overflow.  Since we don't want that, we preventDefault.
+        if(!evt._isScroller) {
+            evt.preventDefault()
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/head.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/focusStyle.css">
+
+    <style>
+        .container{
+            width: 1280px !important;
+            padding-right: 0px;
+            padding-left: 0px;
+            overflow: hidden;
+        }
+        .container-fluid {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        /*content*/
+        .row{
+            padding: 0 4%;
+            margin-top: 5%;
+            margin-left: 0;
+        }
+        .span7{
+            width: 565px;
+        }
+        .span7 h3{
+            margin-bottom: 8%;
+        }
+        .span5 {
+            width: 370px;
+        }
+        .img{
+            margin-top: 2%;
+        }
+
+
+
+        /*header样式*/
+        .navbar{
+            margin-bottom: 0;
+        }
+        .navbar-inner {
+
+            min-height: 88px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border:none;
+            border-bottom: 3px solid #c72b2c;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .navbar .nav > li > a {
+            font-size: 20px;
+            float: none;
+            padding: 10px 15px 10px;
+            color: #777777;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #ffffff;
+        }
+        .nav{
+            width: 100%;
+        }
+        .nav li{
+            margin-top: 1.7%;
+            margin-right: 3%;
+        }
+        .nav li:first-child{
+            margin-right: 28%;
+        }
+
+    </style>
+</head>
+<body>
+<include file="header" />
+<div class="container">
+    <div class="container-fluid">
+        <img src="/Public/Home/image/pc3.png" alt="">
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="span7">
+                <h3>妈权益</h3>
+                <p>飞机上的浪费精力睡的房间里睡大觉烦死了看到放假了可是当减肥了上篮得分纪录删掉
+                是地方了建设东路附近睡觉了开的房间里看书的死了都快急疯了是介绍来的快放假了就是的理解
+                还是多方了解历史说了地方开始觉得法律手段解放了</p>
+                <i>MORE+</i>
+            </div>
+            <div class="span7">
+                <img src="__PUBLIC__/Home/image/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span7">
+                <img src="__PUBLIC__/Home/image/3.jpg" alt="">
+            </div>
+            <div class="span7">
+                <h3>妈权益</h3>
+                <p>飞机上的浪费精力睡的房间里睡大觉烦死了看到放假了可是当减肥了上篮得分纪录删掉
+                    是地方了建设东路附近睡觉了开的房间里看书的死了都快急疯了是介绍来的快放假了就是的理解
+                    还是多方了解历史说了地方开始觉得法律手段解放了</p>
+                <i>MORE+</i>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="span7">
+                <h3>妈权益</h3>
+                <p>飞机上的浪费精力睡的房间里睡大觉烦死了看到放假了可是当减肥了上篮得分纪录删掉
+                    是地方了建设东路附近睡觉了开的房间里看书的死了都快急疯了是介绍来的快放假了就是的理解
+                    还是多方了解历史说了地方开始觉得法律手段解放了</p>
+                <i>MORE+</i>
+            </div>
+            <div class="span7">
+                <img src="__PUBLIC__/Home/image/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="row img">
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="row img">
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+            <div class="span5">
+                <img src="/Public/Home/image/4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<include file="footer" />
+<script src="__PUBLIC__/Home/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $(".nav-pills li").on('click',function () {
+            $(this).children().addClass('active');
+            $(this).siblings().children().removeClass('active');
+        });
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/head.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/focusStyle.css">
+
+    <style>
+        .container{
+            width: 1280px !important;
+            padding-right: 0px;
+            padding-left: 0px;
+            overflow: hidden;
+        }
+        .container-fluid {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .span8 {
+            padding-top: 6%;
+            box-sizing: border-box;
+        }
+        .row{
+            margin: 2% 0;
+        }
+
+
+        /*header样式*/
+        .navbar{
+            margin-bottom: 0;
+        }
+        .navbar-inner {
+
+            min-height: 88px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border:none;
+            border-bottom: 3px solid #c72b2c;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .navbar .nav > li > a {
+            font-size: 20px;
+            float: none;
+            padding: 10px 15px 10px;
+            color: #777777;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #ffffff;
+        }
+        .nav{
+            width: 100%;
+        }
+        .nav li{
+            margin-top: 1.7%;
+            margin-right: 3%;
+        }
+        .nav li:first-child{
+            margin-right: 28%;
+        }
+
+    </style>
+</head>
+<body>
+<include file="header" />
+<div class="container">
+    <div class="container-fluid">
+        <img src="/Public/Home/image/pc3.png" alt="">
+    </div>
+    <div class="container-fluid">
+        <ul>
+            <li class="row">
+                <div class="span7"><img src="/Public/Home/image/10.jpg" alt="" width="530" height="360"></div>
+                <div class="span8">
+                    <h4>水墨家园 - 近观可意--李小可作品</h4>
+                    <div>2017-03-20</div>
+                    <br>
+                    <br>
+                    <br>
+                    <span>睡觉了的风景了谁就发了可是件代发说了句房间里睡大觉发生了疯狂就是地方
+                        就是浪费家里的事了九十多块腹肌锻炼了时间浪费空间的老师快捷方式离开说了开发
+                            回来就发了快睡觉睡觉了空调房间老师就算了的看法就老师家访死了烦解暑良方s
+                            上篮得分快结束了睡觉了的房间里是上了飞机酸辣粉说了句分手废旧塑料口袋烦死了开房间
+                            还是房间里睡觉就死定了放假了是老师的街坊邻居说了街坊邻居楼上房间里睡大觉说了几分
+                            了多少积分累死街坊邻居
+                        </span>
+                    <i>MORE+</i>
+                </div>
+            </li>
+            <li class="row">
+                <div class="span7"><img src="/Public/Home/image/10.jpg" alt="" width="530" height="360"></div>
+                <div class="span8">
+                    <h4>水墨家园 - 近观可意--李小可作品</h4>
+                    <div>2017-03-20</div>
+                    <br>
+                    <br>
+                    <br>
+                    <span>睡觉了的风景了谁就发了可是件代发说了句房间里睡大觉发生了疯狂就是地方
+                        就是浪费家里的事了九十多块腹肌锻炼了时间浪费空间的老师快捷方式离开说了开发
+                            回来就发了快睡觉睡觉了空调房间老师就算了的看法就老师家访死了烦解暑良方s
+                            上篮得分快结束了睡觉了的房间里是上了飞机酸辣粉说了句分手废旧塑料口袋烦死了开房间
+                            还是房间里睡觉就死定了放假了是老师的街坊邻居说了街坊邻居楼上房间里睡大觉说了几分
+                            了多少积分累死街坊邻居
+                        </span>
+                    <i>MORE+</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<include file="footer" />
+<script src="__PUBLIC__/Home/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $(".nav-pills li").on('click',function () {
+            $(this).children().addClass('active');
+            $(this).siblings().children().removeClass('active');
+        });
+
+        var H = $(".row .span7").height() +'px';
+        $(".row .span8").css('height',H);
+    })
+</script>
+</body>
+</html>

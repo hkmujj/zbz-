@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珍宝斋</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/header.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .wrap{
+            width: 1280px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 88px;
+            border-bottom:3px solid #c72b2c ;
+        }
+        header ul li{
+            font-size: 18px;
+            float: left;
+            height: 44px;
+            width: 90px;
+            text-align: center;
+            line-height: 44px;
+            padding: 22px 0;
+            margin: 0 20px;
+        }
+        header ul li:last-child{
+            width: 220px;
+            line-height: normal;
+            text-align: left;
+            float: right;
+        }
+        header ul li:first-child{
+            height: 100%;
+            margin-right: 25%;
+            padding: 22px 0;
+        }
+        .active{
+            color: red;
+        }
+        /*footer*/
+        footer{
+            margin-top: 50px;
+            width: 100%;
+            background: #c72b2c;
+            position: fixed;
+            bottom: 0;
+        }
+        footer h4{
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 30px;
+            text-align: center;
+        }
+        footer p{
+            font-size: 1rem;
+            color: #fff;
+            margin: 20px 0 30px 0;
+            text-align: center;
+        }
+
+/*缩略图*/
+        *{ margin:0; padding:0; list-style:none;}
+        img{ border:0;}
+
+        .ban{ width:900px; position:relative; overflow:hidden;float: left;position: relative}
+        .title{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            font-size: 18px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #fff;
+        }
+        .ban2{ width:900px; height:600px; position:relative; overflow:hidden;}
+        .ban2 ul{ position:absolute; left:0; top:0;}
+        .ban2 ul li{ width:900px; height:600px; padding-top: 50px; text-align: center;}
+        .prev{ float:left; cursor:pointer;}
+        .num{ height:94px;overflow:hidden; width:835px; position:relative;float:left;}
+        .min_pic{ padding-top:10px; width:900px;}
+        .num ul{ position:absolute; left:0; top:0;}
+        .num ul li{ width:138px; height:92px; margin-right:5px; padding:1px;}
+        .num ul li.on{ border:1px solid red; padding:0;}
+        .prev_btn1{ width:16px; text-align:center; height:18px; margin-top:40px; margin-right:20px; cursor:pointer; float:left;}
+        .next_btn1{  width:16px; text-align:center; height:18px; margin-top:40px;cursor:pointer;float:right;}
+        .prev1{ position:absolute; top:275px; left:20px; width:28px; height:51px;z-index:9;cursor:pointer;}
+        .next1{ position:absolute; top:275px; right:20px; width:28px; height:51px;z-index:9;cursor:pointer;}
+        .mhc{ background:#000; width:100%;opacity:0.5;-moz-opacity:0.5;filter:alpha(Opacity=50); position:absolute; left:0; top:0; display:none;}
+        .pop_up{ width:500px; height:500px; padding:10px; background:#fff; position:fixed; -position:absolute; left:50%; top:50%; margin-left:-255px; margin-top:-255px; display:none; z-index:99;}
+        .pop_up_xx{ width:40px; height:40px; position:absolute; top:-40px; right:0; cursor:pointer;}
+        .pop_up2{ width:500px; height:500px; position:relative; overflow:hidden;}
+        .pop_up2{ width:500px; height:500px; position:relative; overflow:hidden; float:left;}
+        .pop_up2 ul{ position:absolute; left:0; top:0;}
+        .pop_up2 ul li{ width:500px; height:500px; float:left;}
+/*右侧内容*/
+        .scr{
+            float: right;
+            width: 320px;
+            overflow: hidden;
+            padding: 25px;
+        }
+
+    </style>
+
+</head>
+<body>
+<include file="header" />
+<section>
+    <div class="wrap">
+        <div class="ban" id="demo1">
+            <div class="title">{$works[0]['name']}</div>
+            <div class="ban2" id="ban_pic1">
+                <div class="prev1" id="prev1"><img src="__PUBLIC__/Home/image/images/index_tab_l.png" width="28" height="51"  alt=""/></div>
+                <div class="next1" id="next1"><img src="__PUBLIC__/Home/image/images/index_tab_r.png" width="28" height="51"  alt=""/></div>
+                <ul class="bg">
+                    <volist name='works' id='vo'>
+                        <li data-title="{$vo['name']}" style=" background-image: url({$vo['thumb']}); background-size: contain; background-repeat: no-repeat; background-position: center;"></li>
+                    </volist>
+                </ul>
+            </div>
+            <div class="min_pic">
+                <div class="prev_btn1" id="prev_btn1"><img src="__PUBLIC__/Home/image/images/feel3.png" width="9" height="18"  alt=""/></div>
+                <div class="num clearfix" id="ban_num1">
+                    <ul class="index">
+                        <volist name='works' id='voo'>
+                         <li class="thumb_pic" style=" background-image: url({$voo['thumb']}); background-size: contain; background-repeat: no-repeat; background-position: center;"><a href="javascript:;"></a></li>   
+                        </volist>
+                       
+                    </ul>
+                </div>
+                <div class="next_btn1" id="next_btn1"><img src="__PUBLIC__/Home/image/images/feel4.png" width="9" height="18"  alt=""/></div>
+            </div>
+        </div>
+
+        <div class="scr">
+            <volist name='works' id='vooo'>
+                <p class="contentitem content{$i}" style="display: block;">
+                    {$vooo['description']|html_entity_decode}
+                </p>
+            </volist>
+            
+        </div>
+    </div>
+</section>
+<include file="footer" />
+<script src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+<!--<script src="__PUBLIC__/Home/js/jquery.js"></script>-->
+<script src="__PUBLIC__/Home/js/pic_tab.js"></script>
+<script>
+
+    jQuery().ready(function() {
+        jQuery(document).on("click",".thumb_pic,.prev1,.next1,.prev_btn1,.next_btn1",function(){
+            var j=jQuery('.index li').index(jQuery('.index li.on')[0]);//带红框元素的索引
+            var title=jQuery(".bg").children().eq(j).attr("data-title");//获取标题
+            jQuery(".contentitem").hide();
+            jQuery(".content"+j).show();
+            jQuery(".title").html(title);
+        });
+    });
+
+</script>
+
+<script type="text/javascript">
+    jq('#demo1').banqh({
+        box             :"#demo1",               //总框架
+        pic             :"#ban_pic1",            //大图框架
+        pnum            :"#ban_num1",           //小图框架
+        prev_btn        :"#prev_btn1",      //小图左箭头
+        next_btn        :"#next_btn1",      //小图右箭头
+        pop_prev        :"#prev2",          //弹出框左箭头
+        pop_next        :"#next2",          //弹出框右箭头
+        prev            :"#prev1",              //大图左箭头
+        next            :"#next1",              //大图右箭头
+        pop_div         :"#demo2",           //弹出框框架
+        pop_pic         :"#ban_pic2",        //弹出框图片框架
+        pop_xx          :".pop_up_xx",        //关闭弹出框按钮
+        mhc             :".mhc",                 //朦灰层
+        autoplay        :false,              //是否自动播放
+        interTime       :5000,             //图片自动切换间隔
+        delayTime       :400,              //切换一张图片时间
+        pop_delayTime   :400,          //弹出框切换一张图片时间
+        order           :0,                    //当前显示的图片（从0开始）
+        picdire         :true,               //大图滚动方向（true为水平方向滚动）
+        mindire         :true,               //小图滚动方向（true为水平方向滚动）
+        min_picnum      :5,               //小图显示数量
+        pop_up          :true                 //大图是否有弹出框
+    })
+</script>
+
+</body>
+</html>

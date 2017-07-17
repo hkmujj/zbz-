@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+            .back_img>.btn_left{
+                left: 4%;
+                top:8.8%;
+            }
+            .back_img>.btn_left span{
+                margin-bottom: 42.5%;
+            }
+            .back_img>.btn_right{
+                right: 4%;
+                top: 8.8%;
+            }
+            .back_img>.btn_right span{
+                margin-bottom: 43.7%;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+            .back_img>.btn_left{
+                left: 4%;
+                top:8.8%;
+            }
+            .back_img>.btn_left span{
+                margin-bottom: 42.5%;
+            }
+            .back_img>.btn_right{
+                right: 4%;
+                top: 8.8%;
+            }
+            .back_img>.btn_right span{
+                margin-bottom: 43.7%;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+            .back_img>.btn_left{
+                left: 4%;
+                top:8.8%;
+            }
+            .back_img>.btn_left span{
+                margin-bottom: 48.5%;
+            }
+            .back_img>.btn_right{
+                right: 4%;
+                top: 8.8%;
+            }
+            .back_img>.btn_right span{
+                margin-bottom: 49.7%;
+            }
+
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+            .back_img>.btn_left{
+                left: 4%;
+                top:8.8%;
+            }
+            .back_img>.btn_left span{
+                margin-bottom: 46.5%;
+            }
+            .back_img>.btn_right{
+                right: 4%;
+                top: 8.8%;
+            }
+            .back_img>.btn_right span{
+                margin-bottom: 47.7%;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+
+
+
+        /*list部分*/
+        .list-block {
+            background: white;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .photo_view{
+            width: 100%;
+            height: 10rem;
+            background-image: url("{$artist['backgroudimg']}");
+            background-size: cover;
+        }
+        .photo_view .head_photo{
+            width: 4.7rem;
+            height: 4.7rem;
+            margin: 0rem auto;
+            border-radius: 100%;
+            background-image:url("{$artist['thumb']}");
+            background-size: 100%;
+            background-clip: padding-box;
+        }
+        .head_desc{
+            color: #fff;
+            /*border: 1px solid red;*/
+            margin-top: 0.4rem;
+            text-align: center;
+        }
+        .photo_btn{
+            width: 100%;
+            height: 2rem;
+
+            /*border: 1px solid red;*/
+            font-size: 1.3rem;
+            padding: 0 0.5rem;
+            padding-top: 0.3rem;
+        }
+        .photo_btn a{
+            color: #ff3d19;
+        }
+        /*nav 关注*/
+        .bar-tab {
+
+            background: #ccc;
+            position: fixed;
+            bottom: 0;
+
+        }
+        .bar-tab .tab-item.active, .bar-tab .tab-item:active {
+            color: #fff;
+
+        }
+
+        .focus_it{
+            background: #ff3e2f;
+        }
+        .unfocus_it{
+            background: #ccc;
+        }
+        /*个人简介栏*/
+        .buttons-tab .button {
+            width: 34%;
+            margin: 0 8%;
+            height: 2.3rem;
+            font-size: .8rem;
+            line-height: 2.3rem;
+            color: #5f646e;
+            border: 0;
+            border-bottom: 2.5px solid transparent;
+        }
+        .buttons-tab .button.active {
+            color: #c72b2c;
+            border-color: #c72b2c;
+        }
+        .buttons-tab {
+            border-bottom: 1px solid #fff;
+        }
+        /*content 个人简介*/
+        .content-block {
+            padding: 0.5rem .75rem;
+            margin: 0;
+            margin-top: 0.5rem;
+            color: #6d6d72;
+        }
+        iframe{
+            display: block;
+            width: 92%;
+            height: 9rem;
+            margin: 0 auto;
+        }
+        .articl_text{
+            padding: 0.8rem 0;
+        }
+        /*content作品浏览*/
+        .list-block ul {
+            border-top: 0px solid #e7e7e7;
+            border-bottom: 0px solid #e7e7e7;
+        }
+        .details_text>span:nth-child(3){
+            color: #ff3e2f;
+        }
+        .works_img{
+            max-height: 18rem;
+            overflow: hidden;
+        }
+        .works_img>img{
+            display: block;
+            margin: 0 auto;
+        }
+        .modal-inner{
+            background: none;
+        }
+        .modal{
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content" style='background-image: url("{$gallery.backgroudimg}");background-position: center;background-repeat: no-repeat;background-attachment: fixed;'>
+            <!--底部导航-->
+            <nav class="bar bar-tab">
+                <if condition='$iffocus eq 1'>
+                    <a class="tab-item unfocus_it" data-id="{$artist['artist_id']}" href="#">
+                        <span class="tab-label">已关注</span>
+                    </a>
+                    <else/>
+                    <a class="tab-item focus_it" data-id="{$artist['artist_id']}" href="#">
+                        <span class="tab-label">关注TA</span>
+                    </a>
+                </if>
+
+            </nav>
+            <div class="list-block photo_view">
+                <div class="photo_btn">
+                    <if condition="$from_src eq 1">
+                        <a href="javascript:history.back();" class="icon icon-left" style="float: left" ></a>
+                        <else/>
+                        <a href="{:U('lists')}" class="icon icon-left" style="float: left" ></a>
+                    </if>
+                    
+                    <!--<a href="#" class="icon icon-share" style="float: right"></a>-->
+                </div>
+                <div class="head_photo"></div>
+                <div class="head_desc">
+                    <span>{$artist['artist_name']}</span><br>
+                    <span>浏览 {$artist['view_count']}&nbsp;|&nbsp;粉丝 {$artist['fellowed_count']}</span>
+                </div>
+            </div>
+            <div class="list-block">
+                <div class="buttons-tab">
+                    <a href="#tab1" class="tab-link active button">个人简介</a>
+                    <a href="#tab2" class="tab-link button">作品浏览</a>
+                </div>
+            </div>
+            <div class="list-block">
+                <div class="tabs">
+                    <div id="tab1" class="tab active">
+                        <div class="content-block">
+                            <notempty name="artist.video">
+                                <video src="{$artist.video}" style="width:100%;" controls="controls">
+                                    your browser does not support the video tag
+                                </video>
+                            </notempty>
+
+                            <div class="articl_text">
+                                <div style="text-indent: 1.8em">{$artist['brief']|html_entity_decode} 
+                                </div>
+                                <div style="text-indent: 1.8em; height: 45px;">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div id="tab2" class="tab">
+                        <volist name="works" id="vo">
+                            <div class="content-block works_view" style="padding: 0.5rem 1rem;">
+                                <ul>
+                                    <li class="gotonewurl" onclick=javascript:window.location.href="{:U('Work/detail')}?id={$vo['work_id']}">
+                                        <div class="works_img"><img src="{$vo['thumb']}" style=" width: 100%;"></div>
+                                        <p class="details_text">
+                                            <span>{$vo['name']}</span><br>
+                                            <span>￥{$vo['buy_price']}</span>
+                                            <span style="font-size:0.7rem;"> 租￥{$vo['rent_price']}/年</span>
+                                        </p>
+                                    </li> 
+
+                                </ul>
+                            </div>
+                            <div style="height: 0.5rem; background-color: #eee"></div>
+                        </volist>
+                        <div style="text-indent: 1.8em; height: 45px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <include file="Common/footer" />
+        <script>
+            $(document).on('click', '.focus_it', function () {
+            var url = "{:U('focus')}";
+            var id = {$artist['artist_id']};
+            var thisone = $(this);
+            $.ajax({
+            type: 'post',
+                    url: url,
+                    data: {status: 1, id:id},
+                    dataType: 'json',
+                    success: function (data) {
+                    thisone.addClass("unfocus_it").removeClass("focus_it").text("已关注");
+                    $.toast(data.msg);
+                    }
+            });
+            });
+            $(document).on('click', '.unfocus_it', function () {
+
+            var url = "{:U('focus')}";
+            var id = {$artist['artist_id']};
+            var thisone = $(this);
+            $.ajax({
+            type: 'post',
+                    url: url,
+                    data: {status: 0, id:id},
+                    dataType: 'json',
+                    success: function (data) {
+                    thisone.addClass("focus_it").removeClass("unfocus_it").text("关注TA");
+                    $.toast(data.msg);
+                    }
+            });
+            });
+            
+            $(document).on("click",'.gotonewurl',function(){
+                $.showPreloader('加载中');
+                setTimeout(function () {
+                    $.hidePreloader();
+                }, 1000);
+            });
+            
+            
+            $(document).on('click','.icon-share', function () {
+                $.modal({
+                  title:  '',
+                  text: '',
+                  afterText:'<img class="shareimg" src="{$resource_path}/image/layer.png" style="width: 100%;height: 100%">',
+                  buttons: [
+                    
+                  ]
+                })
+            });
+            //关闭分享
+            $(document).on("click",'.shareimg',function(){
+                $.closeModal();
+            });
+                
+        </script>
+
+
+</body>
+</html>

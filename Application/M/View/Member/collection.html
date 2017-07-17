@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .list-block li{
+            height: 4.1rem;
+            overflow: hidden;
+        }
+        .list-block.media-list .item-media, .list-block li.media-item .item-media{
+            height: 3rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" >
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+                <span class="icon icon-left"></span>
+
+            </a>
+            <h1 class="title">
+                收藏夹
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+
+        <div class="content">
+            <div class="list-block media-list" style="margin-top: 0;">
+            <ul>
+                <volist name="collections" id="vo">
+                <li onclick=javascript:window.location.href="{:U('Work/detail')}?id={$vo['work_id']}">
+                    <div class="item-content">
+                        <div class="item-media"><img src="{$vo.thumb}" style='width: 2.2rem;'></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">{$vo.name}</div>
+                            </div>
+                            <div class="item-subtitle">{$vo.artist_name}</div>
+                        </div>
+                    </div>
+                </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <link rel="stylesheet" href="{$resource_path}/light7/css/swiper.min.css">
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+         * {
+             margin: 0;
+             padding: 0;
+         }
+        .swiper-container {
+        }
+        .swiper-wrapper {
+            -webkit-perspective: 1200px;
+            -moz-perspective: 1200px;
+            -ms-perspective: 1200px;
+            perspective: 1200px;
+        }
+        .swiper-slide {
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            background-size:100% auto;
+            overflow:hidden;
+            text-align:center;
+            line-height:300px;
+        }
+        .swiper-slide img{
+            max-width:100%;
+            min-width: 100%;
+            height: 100%;
+        }
+        /*header*/
+        header{
+            background: #cb272c;
+            width: 100%;
+            height: 2.2rem;
+            line-height: 2.2rem;
+        }
+        header h3{
+            position: absolute;
+            right: 41%;
+            display: inline-block;
+            font-weight: normal;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+        header a{
+            display: inline-block;
+            width: 1.85rem;
+            height: 100%;
+            background: url("{$resource_path}/image/001.png") no-repeat;
+            background-size: 1.9rem 1.9rem ;
+            background-position: center center;
+            
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <a href="javascript:history.go(-1);"></a>
+    <h3>私人定制</h3>
+</header>
+<div style="max-width:640px; margin:0 auto; background-color: #fff; ">
+    <div class="swiper-container swiper-container-vertical" style="height: 568px;">
+        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+           <div class="swiper-slide swiper-slide-active" style="height: 568px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 10px; z-index: 1; transition-duration: 0ms;">
+               <a href="tel:4000930004"><img src="/Uploads/private/1.jpg" ></a>
+            </div>
+            <div class="swiper-slide swiper-slide-next" style="height: 568px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 10px; z-index: 1; transition-duration: 0ms;">
+                <a href="tel:4000930004"><img src="/Uploads/private/2.jpg"></a>
+            </div>
+            <div class="swiper-slide " style="height: 568px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 10px; z-index: 0; transition-duration: 0ms; transform: translate3d(0px, -454.4px, 0px) scale(0.8);">
+                <a href="tel:4000930004"><img src="/Uploads/private/3.jpg"></a>
+            </div>
+            <div class="swiper-slide" style="height: 568px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 10px; z-index: 1; transition-duration: 0ms;">
+               <a href="tel:4000930004"><img src="/Uploads/private/4.jpg"></a>
+            </div>
+            <div class="swiper-slide" style="height: 568px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 10px; z-index: 1; transition-duration: 0ms;">
+               <a href="tel:4000930004"><img src="/Uploads/private/5.jpg"></a>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- page 容器 -->
+    <!-- <div class="page">
+        标题栏
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="javascript:history.go(-1);">
+                <span class="icon icon-left"></span> 
+            </a>
+            <h1 class="title">
+                选择分类
+            </h1>
+        </header>
+        工具栏
+        这里是页面内容区
+        <div class="content">
+            <volist name='galleries' id='vo'>
+               <div class="card demo-card-header-pic">
+                <div valign="bottom" class="card-header color-white no-border no-padding">
+                    <img class='card-cover' src="{$vo['thumb']}" alt="">
+                </div>
+                <div class="card-footer">
+                    <a href="{:U('detail',array('id'=>$vo['gallery_id']))}" class="link">{$vo.gallery_name}</a>
+                </div>
+            </div> 
+            </volist>
+        </div>
+    </div> -->
+
+
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="{$resource_path}/light7/js/swiper.min.js"></script>
+<include file="Common/footer" />
+<script type="text/javascript">
+    function fixPagesHeight() {
+        $('.swiper-slide,.swiper-container').css({
+            height: $(window).height(),
+        })
+    }
+    $(window).on('resize', function() {
+        fixPagesHeight();
+    })
+    fixPagesHeight();
+
+
+    var mySwiper = new Swiper('.swiper-container', {
+
+        direction: 'vertical',
+        mousewheelControl: true,
+        watchSlidesProgress: true,
+        onInit: function(swiper) {
+            swiper.myactive = 0;
+
+        },
+        onProgress: function(swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides[i];
+                var progress = slide.progress;
+                var translate, boxShadow;
+
+                translate = progress * swiper.height * 0.8;
+                scale = 1 - Math.min(Math.abs(progress * 0.2), 1);
+                boxShadowOpacity = 0;
+
+                slide.style.boxShadow = '0px 0px 10px rgba(0,0,0,' + boxShadowOpacity + ')';
+
+                if (i == swiper.myactive) {
+                    es = slide.style;
+                    es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + (translate) + 'px,0) scale(' + scale + ')';
+                    es.zIndex=0;
+
+
+                }else{
+                    es = slide.style;
+                    es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform ='';
+                    es.zIndex=1;
+
+                }
+
+            }
+
+        },
+
+
+        onTransitionEnd: function(swiper, speed) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                //  es = swiper.slides[i].style;
+                //  es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = '';
+
+                //  swiper.slides[i].style.zIndex = Math.abs(swiper.slides[i].progress);
+            }
+
+            swiper.myactive = swiper.activeIndex;
+
+        },
+        onSetTransition: function(swiper, speed) {
+
+            for (var i = 0; i < swiper.slides.length; i++) {
+                //if (i == swiper.myactive) {
+
+                es = swiper.slides[i].style;
+                es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+                //}
+            }
+
+        }
+
+    });
+</script>
+
+
+</body>
+</html>

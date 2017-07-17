@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+    
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        /*header*/
+        .buttons-row{
+            margin: 0 auto;
+            width: 45%;
+        }
+        .buttons-row .button.active {
+            z-index: 100;
+            color: #c72b2c;
+            background-color: #fff;
+        }
+        .buttons-row .button {
+            color: #fff;
+            border-color: #fff;
+        }
+        .button {
+            height: 1.35rem;
+            line-height: 1.35rem;
+        }
+        .bar {
+            background-color: #c72b2c;
+            border-bottom: 1px solid #e7e7e7;
+            height: 2.5rem;
+            line-height: 2.5rem;
+        }
+        .bar .button {
+            top: 0.55rem;
+        }
+        .bar .icon {
+            padding: .65rem .1rem;
+            font-size: 1rem;
+            line-height: 1.2rem;
+        }
+        a {
+            color: #fff;
+        }
+        /*content——block*/
+        .bar-nav ~ .content {
+            top: 2.5rem;
+        }
+        .content-block {
+            padding: 0rem;
+            margin: 0rem 0;
+            color: #6d6d72;
+        }
+        .list-block {
+            margin: 0rem 0;
+            font-size: .85rem;
+        }
+
+        .list-block ul {
+            border-top: 0px solid #e7e7e7;
+            border-bottom: 0px solid #e7e7e7;
+            height: 5rem;
+        }
+        
+        .list-block .item-media{
+            margin-top:0.5rem;
+            height: 4rem;
+            overflow: hidden;
+        }
+        .list-group-title .item-media{
+            font-size: 0.7rem;
+            color: #777777;
+        }
+        /*购物清单*/
+        .item-media{
+            margin-right: 0.45rem;
+        }
+        .list_item .item-media + .item-inner {
+             margin-left: .2rem;
+        }
+        .list_item ul{
+            margin-bottom: 0.35rem;
+        }
+        .list-group-title{
+            padding: 0.5rem 0;
+            padding-left: 0.75rem;
+            width: 30%;
+        }
+        label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox, label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
+            background-color: #c72b2c;
+            border: none;
+        }
+        .list_item .item-title,.item-subtitle{
+            font-size: 0.78rem;
+            color: #404040;
+        }
+        .list_item .item-after{
+            color: #c72b2c;
+            font-size: 0.7rem;
+            margin-right: 0.3rem;
+        }
+        /*fix_bottom*/
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2.8rem;
+            line-height: 2.8rem;
+        }
+        .fix_bottom>span{
+            float: left;
+            display: inline-block;
+            width: 70%;
+            background: #fff;
+            padding-left: 5%;
+        }
+        .fix_bottom a span{
+            float: left;
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            background: #c72b2c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" onclick="javascript:history.go(-1);"></a>
+        <a class="icon icon-remove pull-right btn_del_item1"></a>
+        <a class="icon icon-home pull-right" href="{:U('Index/index')}"></a>
+        <div class="buttons-row">
+            <a href="#tab1" class="tab-link active button tab1">购买清单</a>
+            <a href="#tab2" class="tab-link button tab2">租赁清单</a>
+        </div>
+    </header>
+    <div class="content">
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                    <div class="content-block">
+                    <empty name='buy_lists'>
+                        <div class="row" style='margin-top:3rem;'>
+                            <div class="col-33">&nbsp;</div>
+                            <div class="col-33"><a href="{:U('M/Index/index')}" class="button button-danger">去逛逛 </a></div>
+                            <div class="col-33">&nbsp;</div>
+                        </div>
+                        <else />
+                        <div class="list-group-title">
+                        <label class="label-checkbox item-content">
+                            <input id="all_check" type="checkbox" name="my-radio">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i>&nbsp;选择全部</div>
+                        </label>
+                    </div>
+                    <div class="list-block list-block1 media-list list_item">
+                        <form id='myForm1'>
+                            <volist name="buy_lists" id="vo">
+                            <ul>
+                                <li>
+                                    <label class="label-checkbox item-content">
+                                        <input type="checkbox" name="buyitems[]" data-price="{$vo['buyprice']}" value="{$vo['id']}">
+                                        <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                        <div class="item-media"><img src="{$vo['work_thumb']}" style='width: 4rem;'></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">{$vo['work_name']}</div>
+                                                <div class="item-after">￥{$vo['buyprice']}</div>
+                                            </div>
+                                            <div class="item-subtitle"></div>
+                                            <div class="item-text">
+                                                <p>{$vo['wwidth']}cm*{$vo['wheight']}cm</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                            </volist>
+                        </form>
+                    </div>
+                    <div class="list-block fix_bottom">
+                        <span style="font-size: 0.7rem">合计：￥<span class='buy_lists_amount' style="font-size: 0.8rem;font-weight: 600;color: #c72b2c;">0</span></span>
+                        <a href="#" onclick='javascript:submit_order_buy();'><span>去结算</span></a>
+                    </div>
+                    </empty>    
+                    
+                </div>
+            </div>
+            <div id="tab2" class="tab">
+                <div class="content-block">
+                    <empty name='rent_lists'>
+                        <div class="row" style='margin-top:3rem;'>
+                            <div class="col-33">&nbsp;</div>
+                            <div class="col-33"><a href="{:U('M/Index/index')}" class="button button-danger">去逛逛 </a></div>
+                            <div class="col-33">&nbsp;</div>
+                        </div>
+                        <else />
+                        <div class="list-group-title">
+                        <label class="label-checkbox item-content">
+                            <input id="all_checks" type="checkbox" name="my-radio">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i>&nbsp;选择全部</div>
+                        </label>
+                    </div>
+                    <div class="list-block list-block2 media-list list_item">
+                        <form id='myForm2'>
+                            <volist name="rent_lists" id="vo">
+                            <ul>
+                                <li>
+                                    <label class="label-checkbox item-content">
+                                        <input type="checkbox" name="rentitems[]" data-price="{$vo['rentprice']}" value="{$vo['id']}">
+                                        <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                        <div class="item-media"><img src="{$vo['work_thumb']}" style='width: 4rem;'></div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">{$vo['work_name']}</div>
+                                                <div class="item-after">￥{$vo['rentprice']}/年</div>
+                                            </div>
+                                            <div class="item-subtitle"></div>
+                                            <div class="item-text">
+                                                <p>{$vo['wwidth']}cm *{$vo['wheight']}cm</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </li>
+                            </ul>
+                            </volist>
+                        </form>
+                    </div>
+                    <div class="list-block fix_bottom">
+                        <span style="font-size: 0.7rem">合计：￥<span class='rent_lists_amount'style="font-size: 0.8rem;font-weight: 600;color: #c72b2c;">0</span></span>
+                        <a href="#" onclick='javascript:submit_order_rent();'><span>去结算</span></a>
+                    </div>
+                    </empty>    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Common/footer" />
+<script>
+    $(function () {
+        $('#all_check').click(function () {
+            if (this.checked){
+                $('.list-block1 :checkbox').prop("checked", true);
+                
+                recal_buy_lists_amount();
+            }else {
+                $('.list-block1 :checkbox').prop("checked", false);
+                
+                $(".buy_lists_amount").text("0");
+            }
+
+        });
+        
+        
+        //计算选择的产品的价格
+        function recal_buy_lists_amount()
+        {
+            var buy_lists_amount = 0;
+            $('.list-block1 :checkbox').each(function(i){
+                if(this.checked)
+                {
+                    buy_lists_amount += parseInt($(this).attr("data-price"));
+                }
+              });
+              
+            $(".buy_lists_amount").text(buy_lists_amount);  
+            
+        }
+        
+        $('.list-block1 :checkbox').click(function(){
+            recal_buy_lists_amount();
+        });
+        
+        
+        $('#all_checks').click(function () {
+            if (this.checked){
+                $('.list-block2 :checkbox').prop("checked", true);
+                recal_rent_lists_amount();
+            }else {
+                $('.list-block2 :checkbox').prop("checked", false);
+                $(".rent_lists_amount").text("0");
+            }
+
+        });
+        
+        //计算选择的产品的价格
+        function recal_rent_lists_amount()
+        {
+            var buy_lists_amount = 0;
+            $('.list-block2 :checkbox').each(function(i){
+                if(this.checked)
+                {
+                    buy_lists_amount += parseInt($(this).attr("data-price"));
+                }
+              });
+              
+            $(".rent_lists_amount").text(buy_lists_amount);  
+            
+        }
+        
+        $('.list-block2 :checkbox').click(function(){
+            recal_rent_lists_amount();
+        });
+        
+        $(document).on("click",".tab1",function(){
+                $(".icon-remove").addClass("btn_del_item1").removeClass("btn_del_item2");
+        });
+        
+        $(document).on("click",".tab2",function(){
+                $(".icon-remove").addClass("btn_del_item2").removeClass("btn_del_item1");
+        });
+        
+        $(document).on("click",".btn_del_item1",function(){
+                $.confirm('删除选中作品?', function () {
+                    $.post("{:U('del_shoppingcart_buy')}", $('#myForm1').serialize(), function (data) {
+                        if(data.err==0)
+                          {
+                              //页面跳转
+                              window.location.reload();
+                          }
+                          else
+                          {
+                              $.alert(data.msg);
+                          }  
+                      }, "json");
+                });
+        });
+        $(document).on("click",".btn_del_item2",function(){
+                $.confirm('删除选中作品?', function () {
+                    $.post("{:U('del_shoppingcart_rent')}", $('#myForm2').serialize(), function (data) {
+                        if(data.err==0)
+                          {
+                              //页面跳转
+                              window.location.reload();
+                          }
+                          else
+                          {
+                              $.alert(data.msg);
+                          }  
+                      }, "json");
+                });
+        });
+    });
+    
+    
+    function submit_order_buy()
+    {
+        var buy_lists_amount = false;
+        $('.list-block1 :checkbox').each(function(i){
+            if(this.checked)
+            {
+                buy_lists_amount = true;
+            }
+          });
+          
+          if(buy_lists_amount)
+          {
+              $.showPreloader('订单处理中');
+              $.post("{:U('creat_order_buy')}", $('#myForm1').serialize(), function (data) {
+                    if(data.err==0)
+                    {
+                        //页面跳转
+                        window.location.href='{:U("Shoppingcart/submit_order")}?oid='+data.order_id;
+                    }
+                    else
+                    {
+                        $.alert(data.msg);
+                    }
+                }, "json");
+            }
+          else
+          {
+              $.toast("请选择商品");
+          }
+    }
+    
+    function submit_order_rent()
+    {
+        var buy_lists_amount = false;
+        $('.list-block2 :checkbox').each(function(i){
+            if(this.checked)
+            {
+                buy_lists_amount = true;
+            }
+          });
+          
+          if(buy_lists_amount)
+          {
+              $.showPreloader('订单处理中');
+              $.post("{:U('creat_order_rent')}", $('#myForm2').serialize(), function (data) {
+                  if(data.err==0)
+                    {
+                        //页面跳转
+                        window.location.href='{:U("Shoppingcart/submit_order")}?oid='+data.order_id;
+                    }
+                    else
+                    {
+                        $.alert(data.msg);
+                    }  
+                }, "json");
+          }
+          else
+          {
+              $.toast("请选择商品");
+          }
+        
+    }
+    
+    
+</script>
+</body>
+</html>

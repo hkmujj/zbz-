@@ -1,0 +1,172 @@
+[ 2017-07-17T11:49:31+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021896s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009470s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0478s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002306s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.019653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019700s ]
+
+[ 2017-07-17T11:49:39+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0195s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000629s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006452s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2017-07-17T11:49:40+08:00 ] 127.0.0.1 /index.php/Home/Index/artist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 82 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 83 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 84 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 85 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016572s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016612s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2017-07-17T11:49:41+08:00 ] 127.0.0.1 /index.php/Home/Index/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_news` [ RunTime:0.1190s ]
+SQL: SELECT * FROM `zbz_pc_news` ORDER BY ctime desc LIMIT 10   [ RunTime:0.0127s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000279s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 114 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 115 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 116 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 117 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031143s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001673s ]
+
+[ 2017-07-17T11:49:42+08:00 ] 127.0.0.1 /index.php/Home/Index/profile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_pages` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `zbz_pc_pages` WHERE `type` = 2 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 132 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 133 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 134 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 135 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 136 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030647s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001425s ]
+
+[ 2017-07-17T11:49:44+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\zbz\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005636s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005665s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000398s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000429s ]
+

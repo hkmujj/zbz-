@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        a{color:#747474;}
+        .link span{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Index/index')}">
+                <span class="icon icon-left"></span>
+               
+            </a>
+            <h1 class="title">
+                线下体验中心
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <volist name='galleries' id='vo'>
+               <div class="card demo-card-header-pic">
+                <div valign="bottom" class="card-header color-white no-border no-padding">
+                    <a href="{:U('detail',array('id'=>$vo['gallery_id']))}"><img class='card-cover' src="{$vo['thumb']}" alt=""></a>
+                </div>
+                <div class="card-footer" style='text-align: center;'>
+                    <a href="{:U('detail',array('id'=>$vo['gallery_id']))}" class="link" style='width: 100%;'>
+                        <span>{$vo.gallery_name}</span></a>
+                </div>
+            </div> 
+            </volist>
+            
+        </div>
+    </div>
+
+
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

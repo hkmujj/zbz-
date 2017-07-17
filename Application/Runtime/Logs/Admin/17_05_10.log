@@ -1,0 +1,344 @@
+[ 2017-05-10T09:33:34+08:00 ] 127.0.0.1 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+
+[ 2017-05-10T09:33:34+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001357s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023064s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023187s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001061s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001436s ]
+
+[ 2017-05-10T09:33:46+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000938s ]
+
+[ 2017-05-10T09:33:48+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000061s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004563s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-05-10T09:34:12+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004259s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+
+[ 2017-05-10T09:34:14+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000060s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2017-05-10T09:34:27+08:00 ] 127.0.0.1 /index.php/Admin/Users/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000523s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000551s ]
+
+[ 2017-05-10T09:34:28+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001110s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0333s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0350s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0292s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0006s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:37:35+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:37:36+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:37:36+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:37:36+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:38:45+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+ERR: 1146:Table 'zbz.zbz_member_collection_record' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `zbz_member_collection_record`
+
+[ 2017-05-10T09:39:44+08:00 ] 127.0.0.1 /index.php/Admin/Setting/dashboard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0054s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_orders` WHERE `ctime_date` = '20170510' AND `order_type` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_members` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_members` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_page_view_log` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_page_view_log` WHERE `ctime_date` = '20170510' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `zbz_member_collection_record` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_member_collection_record` WHERE `ctime_date` = '20170510' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `zbz_member_focus_record` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `zbz_member_focus_record` WHERE `ctime_date` = '20170510' AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001576s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000686s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2017-05-10T09:39:48+08:00 ] 127.0.0.1 /index.php/Admin/Orders/rent_orders.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030582s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2017-05-10T09:39:49+08:00 ] 127.0.0.1 /index.php/Admin/Orders/rent_orders.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `zbz_orders` WHERE `order_type` = 1 ORDER BY oid DESC  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2017-05-10T09:39:51+08:00 ] 127.0.0.1 /index.php/Admin/Orders/rent_orders_detail.html?oid=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `zbz_orders` WHERE `oid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `zbz_orders_works` [ RunTime:0.0040s ]
+SQL: SELECT zbz_orders_works.order_id,zbz_works.*,zbz_work_topic.name as topic_name,zbz_work_categories.name as cat_name FROM `zbz_orders_works` left join zbz_works on zbz_works.work_id = zbz_orders_works.work_id left join zbz_work_categories on zbz_work_categories.cat_id = zbz_works.cat_id left join zbz_work_topic on zbz_work_topic.topic_id = zbz_works.topic_id  WHERE zbz_orders_works.order_id = '1'  [ RunTime:0.0269s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019180s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2017-05-10T09:39:52+08:00 ] 127.0.0.1 /index.php/Admin/Orders/rent_orders.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `zbz_orders` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `zbz_orders` WHERE `order_type` = 1 ORDER BY oid DESC  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000516s ]
+

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/bootstrap.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/focusStyle.css">
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/head.css">
+    <style>
+        .container{
+            width: 1280px !important;
+            padding-right: 0px;
+            padding-left: 0px;
+            overflow: hidden;
+        }
+        .container-fluid {
+
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .paint_img{
+            text-align: center;
+            margin: 28px 0 16px 0;
+        }
+        .paint_title{
+            margin-bottom: 30px;
+        }
+        .paint_title span{
+            display: block;
+            text-align: center;
+        }
+        .paint_title span:first-child{
+            font-size: 24px;
+            color: #c72b2c;
+        }
+        .paint_title span:last-child{
+            font-size: 18px;
+            color: #000;
+        }
+        .paint_code span{
+            display: inline-block;
+            width: 32%;
+            text-align: center;
+        }
+        .col-md-4 {
+            width: 33%;
+        }
+        .paint_code span:first-child{
+            margin-right: 1.5%;
+        }
+        .paint_code span:last-child{
+            float:right;
+        }
+
+        ul, ol {
+            padding: 0;
+            margin: 0 0 10px 0px;
+        }
+        #focus-bubble {
+            width: 90px!important;
+            margin-left: -45px;
+        }
+
+
+
+
+        /*header样式*/
+        .navbar{
+            margin-bottom: 0;
+        }
+        .navbar-inner {
+
+            min-height: 88px;
+            padding-right: 20px;
+            padding-left: 20px;
+            border:none;
+            border-bottom: 3px solid #c72b2c;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .navbar .nav > li > a {
+            font-size: 20px;
+            float: none;
+            padding: 10px 15px 10px;
+            color: #777777;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #ffffff;
+        }
+        .nav{
+            width: 100%;
+        }
+        .nav li{
+            margin-top: 1.7%;
+            margin-right: 3%;
+        }
+        .nav li:first-child{
+            margin-right: 28%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<include file="header" />
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="banner">
+            <div id="focus-banner">
+                <ul id="focus-banner-list">
+                    <li>
+                        <a href="#" class="focus-banner-img">
+                            <img src="__PUBLIC__/Home/image/2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="focus-banner-img">
+                            <img src="__PUBLIC__/Home/image/3.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="focus-banner-img">
+                            <img src="__PUBLIC__/Home/image/4.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="focus-banner-img">
+                            <img src="__PUBLIC__/Home/image/1.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <a href="javascript:;" id="prev-img" class="focus-handle"></a>
+                <a href="javascript:;" id="next-img" class="focus-handle"></a>
+                <ul id="focus-bubble"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="painting">
+            <div class="paint_img"><img src="__PUBLIC__/Home/image/004.png" alt=""></div>
+            <div class="paint_title">
+                <span>中国当代名家书画租赁交易平台</span>
+                <span>Painting and Calligraphy leasing transaction platform</span>
+            </div>
+            <div class="paint_code row" style="user-select: text;">
+                <span class="col-md-4" style="user-select: text;"><img src="/Public/Home/image/2.png"  style="user-select: text; width:100%;height:100%;"></span>
+                <span class="col-md-4" style="user-select: text;"><img src="/Public/Home/image/3.png"   style="user-select: text; width:100%;height:100%;"></span>
+                <span class="col-md-4" style="user-select: text;"><img src="/Public/Home/image/4.png"   style="user-select: text; width:100%;height:100%;"></span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="footer" />
+
+
+
+<script src="__PUBLIC__/Home/js/bootstrap.js"></script>
+
+<script>
+    $(function(){
+        (function(){
+            var $focusBanner=$("#focus-banner"),
+                    $bannerList=$("#focus-banner-list li"),
+                    $focusHandle=$(".focus-handle"),
+                    $bannerImg=$(".focus-banner-img"),
+                    $nextBnt=$("#next-img"),
+                    $prevBnt=$("#prev-img"),
+                    $focusBubble=$("#focus-bubble"),
+                    bannerLength=$bannerList.length,
+                    _index=0,
+                    _timer="";
+
+            var _height=$(".focus-banner-img").find("img").height();
+            $focusBanner.height(_height);
+            $bannerImg.height(_height);
+
+            $(window).resize(function(){
+                window.location.reload()
+            });
+
+            for(var i=0; i<bannerLength; i++){
+                $bannerList.eq(i).css("zIndex",bannerLength-i);
+                $focusBubble.append("<li></li>");
+            }
+            $focusBubble.find("li").eq(0).addClass("current");
+            var bubbleLength=$focusBubble.find("li").length;
+            $focusBubble.css({
+                "width":bubbleLength*22,
+                "marginLeft":-bubbleLength*11
+            });//初始化
+
+            $focusBubble.on("click","li",function(){
+                $(this).addClass("current").siblings().removeClass("current");
+                _index=$(this).index();
+                changeImg(_index);
+            });//点击轮换
+
+            $nextBnt.on("click",function(){
+                _index++
+                if(_index>bannerLength-1){
+                    _index=0;
+                }
+                changeImg(_index);
+            });//下一张
+
+            $prevBnt.on("click",function(){
+                _index--
+                if(_index<0){
+                    _index=bannerLength-1;
+                }
+                changeImg(_index);
+            });//上一张
+
+            function changeImg(_index){
+                $bannerList.eq(_index).fadeIn(250);
+                $bannerList.eq(_index).siblings().fadeOut(200);
+                $focusBubble.find("li").removeClass("current");
+                $focusBubble.find("li").eq(_index).addClass("current");
+                clearInterval(_timer);
+                _timer=setInterval(function(){$("#next-img").click()},5000)
+            }//切换主函数
+            _timer=setInterval(function(){$("#next-img").click()},5000)
+        })();
+    })
+</script>
+
+
+<script>
+    $(function () {
+        $(".nav-pills li").on('click',function () {
+            $(this).children().addClass('active');
+            $(this).siblings().children().removeClass('active');
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .list-block{
+            margin: 0 0 0rem 0;
+        }
+        .page{
+            background-color: #fff;
+        }
+        /*装饰风格*/
+        
+        .paint_style{
+            height: 95px;
+            padding: 0 15px 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: none;
+        }
+        .paint_style_item{
+            margin-right:5px;
+            clear: both;
+            width: 90px;
+            background-color: white;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        .paint_style_text{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 92%;
+            width: 100%;
+        }
+        
+        .paint_style_text span{
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        
+        .paint_style_text p{
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .img_item{
+            width: 100%;
+            display:grid;
+        }
+        .img_item img{
+            width: 100%;
+        }
+        
+        .card{
+            margin: 10px 0;
+        }
+        /*装饰风格*/
+        
+        .paint_style{
+            height: 120px;
+            padding: 0 15px 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: none;
+        }
+        .paint_style_item{
+            /*margin-right:5px;*/
+            clear: both;
+            width: 100%;
+            background-color: white;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        .paint_style_text{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 100%;
+            width: 100%;
+        }
+        
+        .paint_style_text span{
+            display: inline-block;
+            /*height: 100%;*/
+            vertical-align: middle;
+        }
+        
+        .paint_style_text p{
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 20%;
+        }
+        
+        .art_item_show{
+            position: relative;
+            background-color: #fff;
+            color:#222;
+        }
+        
+        .art_item_text{
+            display: flex;
+            height: 96%;
+            width: 100%;
+        }
+        
+        .art_item_text span{
+            display: inline-block;
+            /*height: 100%;*/
+            vertical-align: middle;
+        }
+        
+        .art_item_text p{
+            display: block;
+            width: 100%;
+            vertical-align: middle;
+            font-size: 0.7rem;
+            color: #222;
+            margin: 0;
+            padding: 4px 4px 0 4px;
+        }
+        .art_item_text p span{
+            font-size: 0.6rem;
+            color: #999;
+        }
+        .swiper-container{
+            padding-bottom: 0.5rem;
+        }
+        
+        .show_pics img{
+            width: 100%;
+        }
+        
+        .banner{
+            height: 100px;
+        }
+        .type_items{
+          height: 110px;
+            padding: 0 15px 15px;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border: none;
+        }
+        .type_item{
+                clear: both;
+                width: 90px;
+                background-color: white;
+                display: inline-block;
+                vertical-align: top;
+                position: relative;
+                overflow: hidden;
+                margin-right: 5px;
+        }
+        
+        </style>
+        
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Index/index')}">
+                <span class="icon icon-left"></span>
+               
+            </a>
+            <h1 class="title">
+                装饰风格
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+           <div class="list-block banner">
+                    <div class="type_items">
+                          <volist name='show_types' id='show_types_vo'>
+                            <div class="type_item">
+                                <a href="{:U('Work/paint_styles')}?id={$show_types_vo.id}">
+                                    <div class="paint_style_item" style="height:90px;">
+                                      <img src="{$show_types_vo.thumb}" style='width:90px; height:90px;' />
+                                      <div class="paint_style_text" >
+                                          <span></span>
+                                          <p>{$show_types_vo['keywords']}</p>
+                                      </div>
+                                  </div>  
+                                </a>
+                            </div>
+                        </volist>  
+                        
+                    </div>
+            </div>
+            
+            <div class="list" >
+                <volist name='results' id='vo'>
+                   <div class="card color-default" style="user-select: text;">
+                      <div class="card-header color-white no-border no-padding">
+                          <img class="card-cover pb-standalone" src="{$vo['thumb']}" alt="" data-id="{$i}"  alt="" />
+                      </div> 
+                  </div>
+                </volist>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+<include file="Common/footer" />
+<script type='text/javascript' src='{$resource_path}/light7/js/swiper-3.4.2.jquery.min.js' charset='utf-8'></script>
+<!-- Initialize Swiper -->
+<!--   <script>
+    
+    var swiper2 = new Swiper('#swiper-container', {
+        slidesPerView: 4,
+        spaceBetween: 5
+    });
+   
+    </script> -->
+<script>
+    $(function(){
+    /*=== 默认为 standalone ===*/
+    var myPhotoBrowserStandalone = $.photoBrowser({
+            photos : [
+                <volist name='results' id='vo'>
+                '{$vo['thumb']}',
+                </volist>
+            ]
+        });
+    //点击时打开图片浏览器
+        $(document).on('click','.pb-standalone',function () {
+            var pos = parseInt($(this).attr("data-id"));
+            pos--;
+          myPhotoBrowserStandalone.open(pos);
+        });
+        
+        
+//        $(".test_lists").hide();
+  
+    });
+    
+</script>
+  
+
+
+</body>
+</html>

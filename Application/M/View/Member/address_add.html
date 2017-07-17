@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+
+    <style>
+        .grid-demo .row {
+            text-align: center;
+        }
+        .grid-demo .row + .row {
+            margin-top: 0.75rem;
+        }
+        .grid-demo .row > [class*=col-] {
+            border: 1px solid #ddd;
+        }
+        .icons-demo .icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0.15rem;
+            font-size: 1.2rem;
+            line-height: 2.5rem;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 1.25rem;
+            display: inline-block;
+        }
+        .button-danger.button-fill {
+            color: red;
+            background-color: transparent;
+        }
+        .btn{
+            margin-top: 1rem;
+        }
+        .btn .button {
+            height: 2rem;
+            font-size: .7rem;
+            line-height: 2rem;
+            color: #fff;
+            background: #e31a2c;
+            border: 0px solid #0894ec;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div id="page-city-picker" class="page">
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" href="{:U('address')}">
+                <span class="icon icon-left"></span>
+            </a>
+            <h1 class='title'>新增地址</h1>
+        </header>
+        <div class="content">
+            <div class="content-block">
+                <form id='myForm'>
+                    <div class="list-block">
+                        <ul>
+                            <!-- Text inputs -->
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">姓名</div>
+                                        <div class="item-input">
+                                            <input type="text" name='contact' id="contact" placeholder="请输入联系人姓名">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">手机</div>
+                                        <div class="item-input">
+                                            <input type="number" name='contact_mobile' id="contact_mobile" placeholder="请输入手机号" min="0" inputmode="numeric" pattern="[0-9]*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">省市区</div>
+                                        <div class="item-input">
+                                            <input type='text' name="address1"  value="广东 深圳 福田区" id='city-picker' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="align-top">
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">详细地址</div>
+                                        <div class="item-input">
+                                            <textarea name='address2' id="address2" placeholder="输入详细地址"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type='hidden' name='oid' value="{$oid}" />
+                </form>
+            </div>
+            <div class="content-block">
+                <div class="btn" style="user-select: text;">
+                    <input class="button btn_submit" type="button" value="保存" style="user-select: text;">
+                </div>
+                <!--                <div class="row">
+                                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">Cancel</a></div>
+                                    <div class="col-50"><a href="#" class="button button-big button-fill button-success btn_submit">Submit</a></div>
+                                </div>-->
+            </div>
+        </div>
+    </div>
+
+
+    <script type='text/javascript' src='{$resource_path}/light7/js/jquery.js' charset='utf-8'></script>
+    <script type="text/javascript">$.config = {router: false}</script>
+    <script type='text/javascript' src='{$resource_path}/light7/js/light7.js' charset='utf-8'></script>
+    <script type='text/javascript' src='{$resource_path}/light7/js/light7-swiper.js' charset='utf-8'></script>
+
+
+    <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js' charset='utf-8'></script>
+    <script type="text/javascript">
+        wx.config({
+            debug: false,
+            appId: '{$signPackage["appId"]}',
+            timestamp: '{$signPackage["timestamp"]}',
+            nonceStr: '{$signPackage["nonceStr"]}',
+            signature: '{$signPackage["signature"]}',
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'scanQRCode',
+                'getLocation'
+            ]
+        });
+
+        wx.ready(function () {
+    // 在这里调用 API
+            wx.onMenuShareTimeline({
+                title: '{$sharedata.share_all.title}', // 分享标题
+                desc: '{$sharedata.share_all.desc}', // 分享描述
+                link: '{$sharedata.share_all.link}', // 分享链接
+                imgUrl: '{$sharedata.share_all.thumb}', // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数，生成红包
+
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+                title: '{$sharedata.share.title}', // 分享标题
+                desc: '{$sharedata.share.desc}', // 分享描述
+                link: '{$sharedata.share.link}', // 分享链接
+                imgUrl: '{$sharedata.share.thumb}', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+
+        });
+    </script>
+    <script type='text/javascript' src='{$resource_path}/light7/js/light7-city-picker.js' charset='utf-8'></script>
+
+    <script>
+        $(function () {
+
+            'use strict';
+
+            $(document).on("pageInit", "#page-city-picker", function (e) {
+                console.log("fdfd");
+                $("#city-picker").cityPicker({});
+            });
+
+            $(document).on('click', '.btn_submit', function () {
+
+                var contact = $("#contact").val();
+                var contact_mobile = $("#contact_mobile").val();
+                var addressone = $("#city-picker").val();
+                var addresstwo = $("#address2").val();
+
+
+                if (contact.length == 0)
+                {
+                    $.alert("联系人不能为空");
+                    return false;
+                }
+
+                var reg = /^1[0-9]{10}$/;
+                var flag = reg.test(contact_mobile); //true
+                if (!flag)
+                {
+                    $.alert("手机号码不正确");
+                    return false;
+                }
+
+                if (addressone.length == 0)
+                {
+                    $.alert("城市不能为空");
+                    return false;
+                }
+
+                if (addresstwo.length == 0)
+                {
+                    $.alert("地址不能为空");
+                    return false;
+                }
+
+                $.post("{:U('address_add')}", $('#myForm').serialize(), function (data) {
+                    if (data.err == 0) {
+    //                    $.alert(data.msg);
+                        $.toast(data.msg);
+                        if(data.oid>0)
+                        {
+                           window.location.href = "{:U('Shoppingcart/address_pick')}?oid="+data.oid; 
+                        }
+                        else
+                        {
+                           window.location.href = "{:U('address')}"; 
+                        }
+                        
+                    } else {
+                        $.alert(data.msg);
+                    }
+                }, "json");
+            });
+        });
+
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            //初始化
+            $.init();
+        });
+    </script>
+</body>
+</html>

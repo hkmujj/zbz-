@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+    
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        .right{
+            float: right;
+        }
+        /*list部分*/
+        .list-block {
+            background: white;
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+        /*member_banner*/
+        .member_banner{
+            width: 100%;
+            height: 11rem;
+            background: #fff;
+            background-image: url("__PUBLIC__/M/image/app_background.jpeg");
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+        }
+        .setting{
+            width: 100%;
+            font-size: 1.2rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            padding: 0.6rem 1rem;
+
+        }
+        .setting img{
+            width: 1.2rem;
+        }
+        .member_photo{
+            line-height: 1;
+            padding-left: 1rem;
+            margin-top: 8%;
+        }
+        .member_photo img{
+            border: 4px solid rgba(255, 246, 242, 0.51);
+            display: inline-block;
+            float: left;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+        }
+        .member_photo span{
+            color: #404040;
+            display: inline-block;
+            float: left;
+            height: 4rem;
+            line-height: 4rem;
+            margin-left: 0.6rem;
+        }
+        /*order_list*/
+        .order_list{
+            padding: 1.6rem 0.6rem;
+        }
+        .order_list .row>div {
+            text-align: center;
+        }
+        /*.order_list .row>div>span:first-child{
+            display: block;
+
+        }*/
+        .order_list .row>div>a span:first-child img{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.4rem;
+            width: 2rem;
+            height: 2rem;
+        }
+        .order_list .row>div>a span:last-child{
+            font-size: 0.8rem;
+            color: #404040;
+        }
+        /*intel_list*/
+        .intel_list{
+            margin-top: 0.5rem;
+            padding: 1.6rem 0rem;
+        }
+        .intel_list .col-25 span:first-child img{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.3rem;
+            width: 1.9rem;
+            height: 1.9rem;
+        }
+        .intel_list .col-25 span:last-child{
+            display: block;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #4f5458;
+        }
+        .intel_list .row .col-25 {
+            width: 21%;
+        }
+
+        /*fix_bottom 底部工具栏*/
+        .nav_bar .col-25 {
+            width: 21%;
+            margin: 0 2%;
+        }
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2.8rem;
+            background: white;
+        }
+        .fix_bottom a{
+            color: #333333;
+            padding: 0.35rem 0;
+            height: 2.8rem;
+            text-align: center;
+            display: block;
+        }
+        .fix_bottom a span{
+
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .fix_bottom a div{
+            font-size: 0.6rem;
+        }
+        .fix_bottom a span img{
+            display: block;
+            margin: 0 auto;
+            width: 1.3rem;
+        }
+        .active_title{
+            color: #c72b2c!important;
+        }
+        .fix_bottom a span:first-child{
+            width: 1.3rem;
+            height: 1.3rem;
+            margin: 0 auto;
+        }
+        .one{
+            background: url("{$resource_path}/image/index_image/001.png");
+            background-size: contain;
+        }
+        .one_h{
+            background: url("{$resource_path}/image/index_image/002.png")!important;
+            background-size: contain!important;
+        }
+        .two{
+            background: url("{$resource_path}/image/index_image/003.png");
+            background-size: contain;
+        }
+        .two_h{
+            background: url("{$resource_path}/image/index_image/004.png")!important;
+            background-size: contain!important;
+        }
+        .three{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .three_h{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .four{
+            background: url("{$resource_path}/image/index_image/007.png");
+            background-size: contain;
+        }
+        .four_h{
+            background: url("{$resource_path}/image/index_image/008.png");
+            background-size: contain;
+        }
+
+        @media only screen and (max-width: 320px) {
+
+        }
+        @media only screen and (min-width: 360px) {
+            .member_banner{
+                height:10rem;
+            }
+            .member_photo{
+                margin-top: 5%;
+            }
+            .order_list{
+                padding: 1.4rem 0.6rem;
+            }
+            .intel_list{
+                padding: 1.4rem 0.6rem;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            .member_banner{
+                height:10rem;
+            }
+            .member_photo{
+                margin-top: 7%;
+            }
+            .order_list{
+                padding: 1.4rem 0.6rem;
+            }
+            .intel_list{
+                padding: 1.4rem 0.6rem;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+
+        }
+        @media only screen and (min-width: 414px) {
+            .member_banner{
+                height:10rem;
+            }
+            .member_photo{
+                margin-top: 7%;
+            }
+            .order_list{
+                padding: 1.4rem 0.6rem;
+            }
+            .intel_list{
+                padding: 1.4rem 0.6rem;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="content">
+        <div class="list-block member_banner">
+            <div class="setting">
+                <!--<a href="#" class="icon icon-settings right"></a>-->
+                <a href="{:U('Setting/index')}" class="right" style="font-size: 0.9rem; color:#c72b2c;">
+                    设置
+                    <!--<img src="{$resource_path}/image/my_image/001.png" alt="">首页-->
+                </a>
+            </div>
+            <div class="member_photo">
+                <img src="{$memberinfo.avatar}" alt="">
+                <span>{$memberinfo.nickname}</span>
+            </div>
+        </div>
+        <div class="list-block order_list">
+            <div class="row">
+                <div class="col-33">
+                    <a href="{:U('Orders/buylist')}">
+                        <span><img src="{$resource_path}/image/my_image/002.png" alt=""></span>
+                        <span>购买订单</span>
+                    </a>
+                </div>
+                <div class="col-33">
+                    <a href="{:U('Orders/rentlist')}">
+                        <span><img src="{$resource_path}/image/my_image/003.png" alt=""></span>
+                        <span>租赁订单</span>
+                    </a>
+                </div>
+                <div class="col-33">
+                    <a href="{:U('Orders/diylist')}">
+                        <span><img src="{$resource_path}/image/my_image/004.png" alt=""></span>
+                        <span>定制订单</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-block intel_list">
+            <div class="row">
+                <div class="col-25">
+                    <a href="{:U('credit')}">
+                        <span><img src="{$resource_path}/image/my_image/005.png" alt=""></span>
+                        <span>积分</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('coupons')}">
+                        <span><img src="{$resource_path}/image/my_image/006.png" alt=""></span>
+                        <span>代金券</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('collection')}">
+                        <span><img src="{$resource_path}/image/my_image/007.png" alt=""></span>
+                        <span>收藏夹</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('fellow')}">
+                        <span><img src="{$resource_path}/image/my_image/008.png" alt=""></span>
+                        <span>关注</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-block intel_list">
+            <div class="row">
+                <div class="col-25">
+                    <a href="{:U('address')}">
+                        <span><img src="{$resource_path}/image/my_image/009.png" alt=""></span>
+                        <span>收货地址</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('mobile')}">
+                        <span><img src="{$resource_path}/image/my_image/010.png" alt=""></span>
+                        <span>绑定手机</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('passwd_reset')}">
+                        <span><img src="{$resource_path}/image/my_image/011.png" alt=""></span>
+                        <span>设置密码</span>
+                    </a>
+                </div>
+                <div class="col-25">
+                    <a href="{:U('msg')}">
+                        <span><img src="{$resource_path}/image/my_image/012.png" alt=""></span>
+                        <span>我的消息</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--底部导航-->
+        <div class="list-block fix_bottom row nav_bar">
+            <a href="{:U('Index/index')}" class="col-25 ">
+                <span class="one">
+                </span>
+                <div>首页</div>
+            </a>
+            <a href="{:U('Work/rent')}" class="col-25">
+                <span class="two"></span>
+                <div>租画</div>
+            </a>
+            <a href="{:U('Work/buy')}" class="col-25">
+                <span class="three"></span>
+                <div>买画</div>
+            </a>
+            <a href="#" class="col-25 active_title">
+                <span class="four_h"></span>
+                <div>我的</div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<include file="Common/footer" />
+</body>
+</html>

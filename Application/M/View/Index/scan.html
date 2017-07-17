@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>扫一扫</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7.css">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7-swiper.css">
+        <style>
+            html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+            .nav a{
+                margin: 0 3.4%;
+            }
+            .scanning{
+                margin-left: 2%;
+                margin-right: 1%;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+            .nav a{
+                margin: 0 3.4%;
+            }
+            .scanning{
+                margin-left: 2%;
+                margin-right: 1%;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+            .nav a{
+                margin: 0 3.8%;
+            }
+            .scanning{
+                margin: 0 3.5%;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+            .nav a{
+                margin: 0 3.8%;
+            }
+            .scanning{
+                margin: 0 3.5%;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        /*list部分*/
+        .list-block {
+            background: white;
+            /*margin: .55rem 0;*/
+            margin-top: 0;
+            margin-bottom: 0rem;
+        }
+        .bar-tab {
+            position: fixed;
+            bottom: 0;
+        }
+        /*搜索部分*/
+        .searchbar {
+            height: 2.5rem;
+            padding: 0.5rem 1rem;
+            background: #c72b2c;
+            font-size: 0.7rem;
+        }
+        .address{
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-top: 1.8%;
+            color: #fff;
+            float: left;
+        }
+        .searc{
+            float: left;
+            width: 58%;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            background: #fff;
+            border-radius: 1rem;
+            text-align: center;
+            color: #8f949a;
+        }
+        .buyCart{
+            font-size: 1rem;
+        }
+        .scanning{
+            display: inline-block;
+            /*margin: 0 3.5%;*/
+        }
+        .scanning img{
+            display: inline-block;
+            margin-top: 2%;
+        }
+        /*nav导航*/
+        .nav{
+            height: 2rem;
+            line-height: 2rem;
+        }
+        .nav a{
+            color: #000;
+            font-size: 0.8rem;
+            display: inline-block;
+            /*margin: 0 3.8%;*/
+            text-align: center;
+        }
+        /*banner*/
+        .swiper-container {
+            padding-bottom: 0px;
+        }
+        /*租画*/
+        .rent_paint{
+            margin-top: 0.5rem;
+            width: 100%;
+            height: 12rem;
+            /*background: url("{$resource_path}/image/8.jpg");*/
+            background-size: contain;
+
+        }
+        .rent_shade{
+            width: 100%;
+            height: 100%;
+            background: rgba(76, 75, 72, 0.25);
+            padding-top: 25%;
+        }
+        .rent_shade span{
+            display: block;
+        }
+        .rent_shade span img{
+            display: block;
+            margin: 0 auto;
+            width: 6rem;
+            height: 1.4rem;
+        }
+            /*工具栏*/
+        /*fix_bottom*/
+        .row .col-25 {
+            width: 21%;
+            margin: 0 2%;
+        }
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2.8rem;
+            background: white;
+        }
+        .fix_bottom a{
+            color: #333333;
+            padding: 0.35rem 0;
+            height: 2.8rem;
+            text-align: center;
+            display: block;
+        }
+        .fix_bottom a span{
+
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .fix_bottom a div{
+            font-size: 0.6rem;
+        }
+        .fix_bottom a span img{
+            display: block;
+            margin: 0 auto;
+            width: 1.3rem;
+        }
+        .active_title{
+            color: #c72b2c!important;
+        }
+        .fix_bottom a span:first-child{
+            width: 1.3rem;
+            height: 1.3rem;
+            margin: 0 auto;
+        }
+        .one{
+            background: url("{$resource_path}/image/index_image/001.png");
+            background-size: contain;
+        }
+        .one_h{
+            background: url("{$resource_path}/image/index_image/002.png")!important;
+            background-size: contain!important;
+        }
+        .two{
+             background: url("{$resource_path}/image/index_image/003.png");
+             background-size: contain;
+        }
+        .two_h{
+            background: url("{$resource_path}/image/index_image/004.png")!important;
+            background-size: contain!important;
+        }
+        .three{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .three_h{
+            background: url("{$resource_path}/image/index_image/005.png");
+            background-size: contain;
+        }
+        .four{
+            background: url("{$resource_path}/image/index_image/007.png");
+            background-size: contain;
+        }
+        .four_h{
+            background: url("{$resource_path}/image/index_image/007.png");
+            background-size: contain;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="content">
+                <div class="content-block">
+                    <a href="#" class="button button-big button-fill button-success btn_scan">扫一扫</a>
+                </div>
+            </div>
+            <div class="list-block fix_bottom row nav_bar">
+            <a href="{:U('Index/index')}" class="col-25">
+                <span class="one">
+                </span>
+                <div>首页</div>
+            </a>
+            <a href="{:U('Work/rent')}" class="col-25">
+                <span class="two"></span>
+                <div>租画</div>
+            </a>
+            <a href="{:U('Work/buy')}" class="col-25">
+                <span class="three"></span>
+                <div>买画</div>
+            </a>
+            <a href="{:U('Member/index')}" class="col-25">
+                <span class="four"></span>
+                <div>我的</div>
+            </a>
+        </div>
+
+        </div>
+
+
+
+
+        <script type='text/javascript' src='{$resource_path}/light7/js/jquery.js' charset='utf-8'></script>
+        <script type="text/javascript">$.config = {router: false}</script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7.js' charset='utf-8'></script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7-swiper.js' charset='utf-8'></script>
+        <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js' charset='utf-8'></script>
+        <script type="text/javascript">
+            wx.config({
+                debug: false,
+                appId: '{$signPackage["appId"]}',
+                timestamp: '{$signPackage["timestamp"]}',
+                nonceStr: '{$signPackage["nonceStr"]}',
+                signature: '{$signPackage["signature"]}',
+                jsApiList: [
+                    // 所有要调用的 API 都要加到这个列表中
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'scanQRCode'
+                ]
+            });
+
+            wx.ready(function () {
+                wx.scanQRCode({
+                    needResult: 1,
+                    scanType: ["qrCode"],
+                    success: function (res) {
+                        var result = res.resultStr;
+//                        alert(result);
+
+
+                        $.confirm('跳转到作品介绍页面?', function () {
+                            window.location.href = result;
+                        });
+                        
+                    }
+
+                });
+            });
+
+
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //初始化
+                $.init();
+
+
+
+                $(document).on('click', '.btn_scan', function () {
+                    wx.scanQRCode({
+                        needResult: 1,
+                        scanType: ["qrCode"],
+                        success: function (res) {
+                            var result = res.resultStr;
+                            $.confirm('跳转到作品介绍页面?', function () {
+                            window.location.href = result;
+                        });
+                        }
+
+                    });
+                });
+
+            });
+        </script>
+    </body>
+
+</html>

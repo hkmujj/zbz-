@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .list-block{
+            margin: 0 0 0.5rem 0;
+        }
+        </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Index/index')}">
+                <span class="icon icon-left"></span>
+               
+            </a>
+            <h1 class="title">
+                艺术家
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <volist name='artists' id='artist'>
+               <div class="list-block media-list author_desc">
+                    <ul>
+                        <li>
+                            <a href="{:U('Artist/detail',array('id'=>$artist['artist_id']))}" class="item-link item-content">
+                                <div class="item-media"><img src="{$artist.thumb}" style='width: 4.5rem; height: 4.5rem; border-radius: 100%;'></div>
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">{$artist.artist_name}</div>
+                                    </div>
+                                    <div class="item-subtitle">{$artist.school}</div>
+                                    <div class="item-text">
+                                        <span>作品数</span>
+                                        <span></span>{$artist.work_count}
+                                        <span>粉丝</span>
+                                        <span></span>{$artist.fellowed_count}
+                                    </div>
+
+                                </div>
+                                <span class=" icon icon-right" ></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </volist>
+            
+        </div>
+    </div>
+
+
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+/*        .content{
+            padding: 0 1rem;
+        }
+        .list-block .item-title.label {
+            width: 30%;
+        }
+        input{
+            border: none;
+        }
+        .list-block .item-content {
+            padding-left: 0.4rem;
+        }
+        .list-block ul {
+            border-radius: 0.3rem;
+            margin-bottom: 0.5rem;
+            padding: 0;
+             margin: 0; 
+            border-top: 0px solid #e7e7e7;
+            border-bottom: 0px solid #e7e7e7;
+        }*/
+        .button-danger.button-fill {
+            color: red;
+            background-color: transparent;
+        }
+        .btn{
+            margin-top: 1rem;
+            margin: 0 auto;
+            width: 80%;
+        }
+        .btn .button {
+            height: 2rem;
+            font-size: .7rem;
+            line-height: 2rem;
+            color: #fff;
+            background: #e31a2c;
+            border: 0px solid #0894ec;
+        }
+        
+        .list-block .item-text{
+            height: 5rem;
+        }
+        .item-text>span{
+            display: block;
+            font-size: 0.6rem;
+        }
+        
+        .item-text>span:first-child{
+            font-size: 0.9rem;
+        }
+        
+        
+        
+        .item-text {
+            color: #fff;
+            font-size: 0.85rem;
+            padding-left: 29%;
+            padding-top: 4%;
+        }
+        .list-block .item-text{
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Shoppingcart/submit_order',array('oid'=>$oid))}">
+                <span class="icon icon-left"></span>
+            </a>
+            <h1 class="title">
+                代金券选择
+            </h1>
+        </header>
+
+        <!-- 工具栏 -->
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <form id="myForm">
+            <div class="list-block media-list">
+                <ul>
+                    <volist name="coupons" id="vo">
+                    <li class="coupon_item">
+                        <label class="label-checkbox item-content">
+                            <input type="radio" name="coupon_flow_id" value="{$vo['id']}">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                            <div class="item-inner">
+                                
+                                <div class="item-text" style="background-image: url({$vo['thumb']}); background-repeat: no-repeat; background-size: contain;">
+                                    <span>立减红包 <span>(单笔订单立减{$vo['coupon_value']})</span></span>
+                <span>有效期：<span>{$vo['ctime']|date="Y.m.d",###}-{$vo['etime']|date="Y.m.d",###}</span></span>
+                                    
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+                <notempty name="coupons">
+                    <div class="list-block">
+
+                        <input type="hidden" name="oid" value="{$oid}" />
+
+
+                        <div class="btn">
+                            <input class="button btn_save" type="button" value="保存">
+                        </div>
+
+
+                    </div>
+                </notempty>
+
+            </form>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+<script>
+    $(document).on('click', '.btn_save', function () {
+        $.showPreloader('处理中');
+        $.post("{:U('coupons_pick')}", $('#myForm').serialize(), function (data) {
+                window.location.href="{:U('submit_order',array('oid'=>$oid))}";
+            }, "json");
+
+    });
+</script>
+
+</body>
+</html>

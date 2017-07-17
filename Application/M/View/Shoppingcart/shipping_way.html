@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>配送方式</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7.css">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7-swiper.css">
+        <style>
+            a {
+                color: #fff;
+            }
+            .list-block .item-link .item-inner{
+                background-image: url("{$resource_path}/light7/img/i-list-chevron-right.png");
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <header class="bar bar-nav">
+                <a class="icon icon-left pull-left" href="{:U('Shoppingcart/submit_order',array('oid'=>$oid))}"></a>
+                <h1 class="title">配送方式</h1>
+            </header>
+            <div class="content">
+                <div class="list-block media-list inset">
+                    <ul>
+                        <li data-id="0" class="shipping_way">
+                            <a href="#" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">上门服务</div>
+                                    </div>
+                                    <div class="item-subtitle">工作人员上门</div>
+                                </div>
+                            </a>
+                        </li> 
+                        <li data-id="1" class="shipping_way">
+                            <a href="#" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">快递物流</div>
+                                    </div>
+                                    <div class="item-subtitle">采用安全快捷的顺丰速运</div>
+                                </div>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <script type='text/javascript' src='{$resource_path}/light7/js/jquery.js' charset='utf-8'></script>
+        <script type="text/javascript">$.config = {router: false}</script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7.js' charset='utf-8'></script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7-swiper.js' charset='utf-8'></script>
+        <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js' charset='utf-8'></script>
+        <script type="text/javascript">
+            wx.config({
+                debug: false,
+                appId: '{$signPackage["appId"]}',
+                timestamp: '{$signPackage["timestamp"]}',
+                nonceStr: '{$signPackage["nonceStr"]}',
+                signature: '{$signPackage["signature"]}',
+                jsApiList: [
+                    // 所有要调用的 API 都要加到这个列表中
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'scanQRCode'
+                ]
+            });
+
+
+
+
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //初始化
+                $.init();
+
+                
+                $(document).on("click",'.shipping_way',function(){
+                    var url = "{:U('Shoppingcart/shipping_way')}";
+                    var oid = {$oid};
+                    var address_id = $(this).attr("data-id");
+                    $.ajax({
+                        type: 'post',
+                        url: url,
+                        data: {oid: oid, id:address_id},
+                        dataType: 'json',
+                        success: function (data) {
+                            window.location.href="{:U('submit_order',array('oid'=>$oid))}";
+                        }
+                    });
+                });
+
+
+
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+         @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        .list-block{
+            background: white;
+        }
+        /*积分 兑换*/
+        .credit_item{
+            margin: 0;
+            font-size: .85rem;
+        }
+        .credit_item .col-50:first-child{
+            border-right: 1px solid #e2e2e2;
+        }
+        .credit_item .col-50 div{
+            font-size: 0.75rem;
+            color: #404040;
+        }
+        .credit_item>span{
+            display: block;
+        }
+        .credit_item img{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0.15rem;
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+        .credit_item .col-50{
+            text-align: center;
+            padding: 0.4rem 0;
+            padding-bottom: 0.3rem;
+            width: 50%;
+            margin-left: 0%;
+        }
+        /*积分券*/
+        .ticket{
+            margin: 0.5rem 0;
+            font-size: 0.75rem;
+            padding: 0.7rem 0;
+            padding-bottom: 0.4rem;
+        }
+        .ticket img{
+            display: block;
+            width: 90%;
+        }
+        .ticket .col-50>div{
+            padding-top: 0.35rem;
+            padding-right: 0.75rem;
+        }
+        .ticket .col-50>div span:first-child{
+            float: left;
+            display: inline-block;
+            height: 1.4rem;
+            line-height: 1.7rem;
+        }
+        .ticket .col-50>div span:last-child{
+            float: right;
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.3rem;
+            background: #e31a2c;
+            color: #fff;
+        }
+        /*弹窗button*/
+        .modal-title {
+            font-size: .85rem;
+            color: #404040;
+        }
+        .modal-button:first-child{
+            background: #b3b3b3;
+        }
+        .modal-button {
+            color: #fff;
+            background: #e31a2c;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+            <span class="icon icon-left"></span>
+        </a>
+        <h1 class="title">积分</h1>
+    </header>
+    <div class="content">
+        <div class="list-block row credit_item">
+            <div class="col-50">
+                <span><img src="{$resource_path}/image/credit_image/001.png" alt=""></span>
+                <div>积分 <span style="color: #c72b2c;">{$memberinfo['credit']}</span></div>
+            </div>
+            <div class="col-50">
+                <span><a href="{:U('credit_record')}"><img src="{$resource_path}/image/credit_image/002.png" alt=""></a></span>
+                <div>积分记录</div>
+            </div>
+        </div>
+        <div class="list-block row ticket">
+            <volist name="lists" id="vo">
+                <div class="col-50 " style=" margin-bottom: 1rem;">
+                    <span><img src="{$vo['thumb_jifen']}" alt=""></span>
+                    <div><span>{$vo['coupon_credit']}积分</span><span class="ticket_lay" onclick="javascript:credit_exchange({$vo['coupon_id']},{$vo['coupon_value']});">兑换</span></div>
+                </div>
+            </volist>
+        </div>
+        
+    </div>
+</div>
+<include file="Common/footer" />
+
+<script>
+//    $(document).on('click','.ticket_lay', function () {
+//        var modal = $.modal({
+//            title: '你确定兑换50元现金券？',
+//            text: '',
+//            afterText:  '',
+//            buttons: [
+//                {
+//                    text: '取消'
+//                },
+//                {
+//                    text: '确认',
+//                    bold: true,
+//                    onClick: function () {
+//
+//                    }
+//                }
+//            ]
+//        });
+//        
+//        $.swiper($$(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});
+//    });
+//    
+//    
+    function credit_exchange(coupon_id,coupon_value)
+    {
+        var modal = $.modal({
+            title: '你确定兑换'+coupon_value+'元现金券？',
+            text: '',
+            afterText:  '',
+            buttons: [
+                {
+                    text: '取消'
+                },
+                {
+                    text: '确认',
+                    bold: true,
+                    onClick: function () {
+                        var url = "{:U('credit_exchange')}";
+                        $.ajax({
+                            type: 'post',
+                            url: url,
+                            data: {coupon_id: coupon_id},
+                            dataType: 'json',
+                            success: function (data) {
+                                if(data.err==0)
+                                {
+                                    $.toast(data.msg);
+                                    setTimeout(function () {
+                                        window.location.reload();
+                                    }, 1000);
+//                                    window.location.reload();
+                                }
+                                else
+                                {
+                                    $.alert(data.msg);
+                                }
+                            }
+                        });
+                    }
+                }
+            ]
+        });
+//        $.alert("dfdf");
+    }
+</script>
+</body>
+</html>

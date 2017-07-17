@@ -1,0 +1,6 @@
+<?php
+return array(
+        /* 公众号设置 */
+        'appid'=>'wxe383bfee3fa9a3fa',
+        'appsecret'=>'6f744e789429870a26883134ece142d8',
+    );

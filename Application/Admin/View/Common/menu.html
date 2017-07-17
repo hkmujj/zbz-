@@ -1,0 +1,283 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      
+      
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li id="Setting_dashboard"><a href="{:U('Setting/dashboard')}"><i class="fa fa-dashboard"></i> <span>首页</span></a></li>
+        <li class="header">订单模块</li>
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bookmark"></i> <span>租赁订单</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Orders_rent_orders"><a href="{:U('Orders/rent_orders')}"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview ">
+          <a href="#">
+            <i class="fa fa-book"></i> <span>购买订单</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Orders_buy_orders"><a href="{:U('Orders/buy_orders')}"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bookmark-o"></i> <span>定制订单</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Orders_diy_orders"><a href="{:U('Orders/diy_orders')}"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+          </ul>
+        </li>
+        
+        
+        
+        
+        <li class="header">作品相关</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-picture-o"></i> <span>作品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Works_lists"><a href="{:U('Works/lists')}"><i class="fa fa-circle-o"></i>作品列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-group"></i> <span>艺术家管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Artists_lists"><a href="{:U('Artists/lists')}"><i class="fa fa-circle-o"></i>艺术家列表</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-chrome"></i> <span>装饰风格管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_mobile_index_showtype_config"><a href="{:U('Setting/mobile_index_showtype_config')}"><i class="fa fa-circle-o"></i>装饰风格列表</a></li>
+          </ul>
+        </li>        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bank"></i> <span>线下画廊管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Galleries_lists"><a href="{:U('Galleries/lists')}"><i class="fa fa-circle-o"></i>画廊列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bars"></i> <span>基础信息配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Works_cat_lists"><a href="{:U('Works/cat_lists')}"><i class="fa fa-circle-o"></i>艺术画分类</a></li>
+            <li id="Works_topic_lists"><a href="{:U('Works/topic_lists')}"><i class="fa fa-circle-o"></i>艺术画题材</a></li>
+          </ul>
+        </li>
+        
+        <li class="header">会员模块</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>会员管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Members_lists"><a href="{:U('Members/lists')}"><i class="fa fa-circle-o"></i>会员列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="{:U('Members/collection')}"><i class="fa fa-star"></i>收藏列表</a>
+        </li>
+        <li class="treeview">
+          <a href="{:U('Members/focus')}"><i class="fa fa-circle-o"></i>关注列表</a>
+        </li>
+        <li class="header">网络营销</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-credit-card"></i> <span>积分管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Credit_lists"><a href="{:U('Credit/lists')}"><i class="fa fa-circle-o"></i>积分获得记录</a></li>
+            <li id="Credit_setting"><a href="{:U('Credit/setting')}"><i class="fa fa-circle-o"></i>积分配置</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-clone"></i> <span>卡券管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Coupons_lists"><a href="{:U('Coupons/lists')}"><i class="fa fa-circle-o"></i>卡券兑换列表</a></li>
+            <li id="Coupons_setting"><a href="{:U('Coupons/setting')}"><i class="fa fa-circle-o"></i>卡券配置</a></li>
+          </ul>
+        </li>
+        <li class="header">资讯内容</li>
+        <li class="treeview">
+          <a href="#">
+              <i class="fa fa-search"></i> <span>搜索配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_promotion_keyword_lists"><a href="{:U('News/promotion_keyword_lists')}"><i class="fa fa-search"></i>推荐搜索关键字</a></li>
+            <li id="News_hot_keyword_lists"><a href="{:U('News/hot_keyword_lists')}"><i class="fa  fa-search-plus"></i>热门搜索关键字</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-desktop"></i> <span>Banner管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_startup_lists"><a href="{:U('News/startup_lists')}"><i class="fa fa-circle-o"></i>APP启动页图片</a></li>
+            <li id="News_banner_lists"><a href="{:U('News/banner_lists')}"><i class="fa fa-circle-o"></i>首页banner</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+              <i class="fa fa-newspaper-o"></i> <span>资讯管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_lists"><a href="{:U('News/lists')}"><i class="fa fa-circle-o"></i>资讯列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+              <i class="fa fa-commenting-o"></i> <span>信息通知</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_msg_lists"><a href="{:U('News/msg_lists')}"><i class="fa fa-circle-o"></i>信息通知列表</a></li>
+          </ul>
+        </li>
+        
+        <li class="header">系统配置</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-home"></i> <span>首页配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_mobile_index_config"><a href="{:U('Setting/mobile_index_config')}"><i class="fa fa-circle-o"></i>微商城首页</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-mobile"></i> <span>短信配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_sms_config"><a href="{:U('Setting/sms_config')}"><i class="fa fa-circle-o"></i>配置页面</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cc-visa"></i> <span>支付配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_payment_config_wx"><a href="{:U('Setting/payment_config_wx')}"><i class="fa fa-circle-o"></i>微信支付</a></li>
+            <li id="Setting_payment_config_alipay"><a href="{:U('Setting/payment_config_alipay')}"><i class="fa fa-circle-o"></i>支付宝支付</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cog"></i> <span>其他配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_pages_setting_lists"><a href="{:U('Setting/pages_setting_lists')}"><i class="fa fa-circle-o"></i>固定页面内容</a></li>
+          </ul>
+        </li>
+        <li class="header">官网配置</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-tv"></i> <span>首页配置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_pc_banner_lists"><a href="{:U('News/pc_banner_lists')}"><i class="fa fa-circle-o"></i>首页banner</a></li>
+            <li id="News_pc_index_img_lists"><a href="{:U('News/pc_index_img_lists')}"><i class="fa fa-circle-o"></i>首页缩略图</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>PC新闻资讯</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="News_pc_lists"><a href="{:U('News/pc_lists')}"><i class="fa fa-circle-o"></i>新闻列表</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-calendar-minus-o"></i> <span>宣传页面</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li id="Setting_pc_pages"><a href="{:U('Setting/pc_pages')}"><i class="fa fa-circle-o"></i>固定页面</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

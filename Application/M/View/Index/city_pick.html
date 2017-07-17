@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <button class="button button-link button-nav pull-left">
+                <span class="icon icon-left"></span>
+
+            </button>
+            <h1 class="title">
+                选择城市
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        
+        <div class="content">
+            <div class="list-block">
+<!--                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">当前城市</li>
+                        <li onclick="javascript:window.location.href='{:U('index')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">深圳市</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>-->
+                <div class="list-group">
+                    <ul>
+                        <li class="list-group-title">选择城市</li>
+                        <volist name="cities" id="vo">
+                        <li onclick="javascript:window.location.href='{:U('index')}?cityid={$vo['id']}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">{$vo.city}</div>
+                                </div>
+                            </div>
+                        </li>
+                        </volist>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+<script>
+    $(document).on('click', '.btn_get_code', function () {
+        $(this).attr("disabled", true).css("background", "#ccc").text("验证码已发");
+        //判断手机号码
+        var mobile = $("#mobile").val();
+        var reg = /^1[0-9]{10}$/;
+        var flag = reg.test(mobile); //true
+
+        if (flag)
+        {
+            $.get("{:U('mobile_send_code')}", $('#myForm').serialize(), function (data) {
+                if (data.err == 0) {
+//                    $.alert(data.msg);
+                    $.toast(data.msg);
+                } else {
+                    $.alert(data.msg);
+                }
+            }, "json");
+        } else
+        {
+            $.alert('手机号码错误');
+        }
+
+
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .content-block{
+            padding: 0;
+        }
+        .buttons-tab .button.active{
+            color: #c72b2c;
+            border-color: #c72b2c;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" >
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+                <span class="icon icon-left"></span>
+
+            </a>
+            <h1 class="title">
+                我的消息
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+
+        <div class="content">
+            <div class="buttons-tab">
+                <a href="#tab1" class="tab-link active button">用户消息</a>
+                <a href="#tab2" class="tab-link button">系统消息</a>
+            </div>
+            <div class="content-block">
+                <div class="tabs">
+                    <div id="tab1" class="tab active">
+                        <div class="content-block">
+                            <div class="list-block media-list" style="margin-top: 0;">
+                                <empty name="msg_member">
+                                    <p style=" margin: 1rem 1rem 1rem 1rem;">暂无消息</p>
+                                    <else />
+                                    <volist name='msg_member' id='vo'>
+                                    <div class="card">
+                                        <div class="card-header">{$vo.title}</div>
+                                        <div class="card-content">
+                                            <div class="card-content-inner">{$vo.content}</div>
+                                        </div>
+                                        <div class="card-footer">{$vo.ctime|date="Y-m-d",###}</div>
+                                    </div>
+                                    </volist>
+                                </empty>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab">
+                        <div class="content-block">
+                            <div class="list-block media-list" style="margin-top: 0;">
+                                <empty name="msg_system">
+                                    <p style=" margin: 1rem 1rem 1rem 1rem;">暂无消息</p>
+                                    <else />
+                                    <volist name='msg_system' id='vo'>
+                                    <div class="card">
+                                        <div class="card-header">{$vo.title}</div>
+                                        <div class="card-content">
+                                            <div class="card-content-inner">{$vo.content}</div>
+                                        </div>
+                                        <div class="card-footer">{$vo.ctime|date="Y-m-d",###}</div>
+                                    </div>
+                                    </volist>
+                                </empty>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

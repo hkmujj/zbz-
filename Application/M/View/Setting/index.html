@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" >
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+                <span class="icon icon-left"></span>
+
+            </a>
+            <h1 class="title">
+                设置
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        
+        <div class="content">
+            <div class="list-block">
+                <div class="list-group">
+                    <ul>
+                        <li onclick="javascript:window.location.href='{:U('aboutus')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">关于我们</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li onclick="javascript:window.location.href='{:U('service')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">客服中心</div> 
+                                </div>
+                            </div>
+                        </li>
+                        <li onclick="javascript:window.location.href='{:U('shipping')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">配送货说明</div> 
+                                </div>
+                            </div>
+                        </li>
+                        <li onclick="javascript:window.location.href='{:U('rent_flow')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">珍宝斋租赁流程</div> 
+                                </div>
+                            </div>
+                        </li>
+                        <li onclick="javascript:window.location.href='{:U('beian')}'">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">鉴证备案</div> 
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

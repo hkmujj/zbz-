@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .list-block .item-content{
+            padding-right: 0.75rem;
+        }
+        a{
+           color:#3d4145; 
+        }
+        </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Index/index')}">
+                <span class="icon icon-left"></span>
+                
+            </a>
+            <h1 class="title">
+                新闻中心
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="list-block media-list">
+                <ul>
+            <volist name='results' id='vo'>
+                
+      
+        <li>
+          <a href="{:U('news_detail',array('id'=>$vo['news_id']))}"><div class="item-content"  style="
+    border-bottom: 1px solid #e7e7e7;
+">
+            
+            <div class="item-inner" style="
+    float: left;
+    width: 70%;border-bottom: none;
+">
+              <div class="item-title-row" style="line-height: 2rem;height: 2.2rem;">
+                <div class="item-title" style="font-size: 0.8rem;line-height: 1rem;word-break: break-all;">{$vo['title']}</div>
+              </div>
+              <div class="item-subtitle">{$vo['ctime']|date="Y-m-d",###}</div>
+            </div>
+  <div class="item-media" style="
+    float: right;width: 30%;
+"><img src="{$vo['thumb']}" style="width:100%;"></div>
+              </div></a>
+        </li>
+        
+        
+      
+    
+               
+            </volist>
+                    </ul>
+          </div>  
+        </div>
+    </div>
+
+
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

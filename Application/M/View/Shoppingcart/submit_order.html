@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <include file="Common/head" />
+
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        /*header*/
+        .bar-nav ~ .content {
+            top: 2.5rem;
+        }
+        .bar {
+            background-color: #c72b2c;
+            border-bottom: 1px solid #e7e7e7;
+            height: 2.5rem;
+            line-height: 2.5rem;
+        }
+        .bar .button {
+            top: 0.55rem;
+        }
+        .bar .icon {
+            padding: .65rem .1rem;
+            font-size: 1rem;
+            line-height: 1.2rem;
+        }
+        a {
+            color: #fff;
+        }
+        .title{
+            line-height: 2.5rem;
+            font-size: 0.85rem;
+        }
+        .bar .button {
+            font-size: .7rem;
+            line-height: 1.35rem;
+            color: #c72b2c;
+            background: #fff;
+            border: 1px solid #fff;
+        }
+        /*内容区*/
+        .list-block {
+            margin: 0 0;
+            font-size: .85rem;
+        }
+
+        .media_num.media-list .item-inner, .media_num li.media-item .item-inner {
+            text-align: right;
+            display: block;
+            padding-top: 7.5%;
+            font-size: 0.7rem;
+            color: #000;
+        }
+        .media_num{
+            margin-top: 0.5rem;
+        }
+        .media_num.media-list .item-media, .media_num li.media-item .item-media {
+            margin-right: 0.45rem;
+            padding-top: .65rem;
+            padding-bottom: .65rem;
+        }
+        /*media_item*/
+        .media_item{
+            margin-top: 0.5rem;
+        }
+        .media_item li{
+            padding-left: 0.75rem;
+        }
+        .media_item li a{
+            border-bottom: 1px solid #e7e7e7;
+            padding-right: 0.75rem;
+        }
+        .media_item .item-inner {
+            border-bottom: 0px solid #e7e7e7;
+        }
+        .media_item .item-inner .col-15{
+            display: block;
+            margin-top: 9%;
+        }
+        .media_item .row .col-85 {
+            border-radius: 0.3rem;
+            border: 1px solid #e7e7e7;
+            width: 84%;
+            margin-left: 0%;
+        }
+        .media_item .item-content {
+            padding-left: 0rem;
+        }
+        .media_item .item-link .item-inner {
+            padding-right: 0.1rem;
+        }
+
+        .media_item_one li a {
+            border-bottom: 0px solid #e7e7e7;
+            padding-right: 0.75rem;
+        }
+        /*pay_mode*/
+        .pay_mode{
+            margin-top: 0.5rem;
+        }
+        .pay_mode .item-inner {
+            border-bottom: 0px solid #e7e7e7;
+        }
+        .pay_mode label{
+            border-bottom: 1px solid #e7e7e7;
+            padding-right: 0.75rem;
+        }
+        .pay_mode label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox, label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
+            background-color: #c72b2c;
+            border: none;
+        }
+        /*所有的ul去边*/
+        .list-block ul {
+            border-top: 0px solid #e7e7e7;
+            border-bottom: 0px solid #e7e7e7;
+        }
+        /*fix_bottom*/
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2.8rem;
+            line-height: 2.8rem;
+        }
+        .fix_bottom>span{
+            float: left;
+            display: inline-block;
+            width: 70%;
+            background: #fff;
+            padding-left: 5%;
+        }
+        .fix_bottom a span{
+            float: left;
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            background: #c72b2c;
+            color: #fff;
+        }
+        label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox, label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox{
+            background-color:#c72b2c;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="bar bar-nav">
+            <if condition="$from_src eq 1">
+                <a class="icon icon-left pull-left" href="javascript:history.go(-1);"></a>
+                <else/>
+                <a class="icon icon-left pull-left" href="{:U('Shoppingcart/index')}"></a>
+            </if>
+            
+            <h1 class="title">提交订单</h1>
+            <button class="button pull-right order_cancel_btn" data-id='{$order.oid}'>取消</button>
+        </header>
+        <div class="content">
+            <div class="list-block contacts-block">
+                <div class="list-group">
+                    <ul>
+                        <li onclick=javascript:window.location.href="{:U('address_pick')}?oid={$order['oid']}">
+                            <input type='hidden' id='contact' value="{$order.contact}" />
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        <span>收货人：</span>
+                                        <span>{$order.contact}</span>
+                                        <span>{$order.contact_mobile}</span>
+                                    </div>
+                                    <span class="icon icon-right"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        {$order.contact_address}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="list-block media-list media_num">
+                <ul>
+                    <li>
+                        <div class="item-content" style=" height: 5rem; overflow: hidden;">
+                            <volist name="order_details" id="vo">
+                                <div class="item-media" style=" height: 4.5rem; overflow: hidden;"><img src="{$vo['thumb']}" style='width: 3.8rem;'></div>
+                            </volist>
+                            <div class="item-inner">
+                                <div>共{$order_details_count}件</div>
+                                <div>￥{$order.order_amount}</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-block media-list media_item">
+                <ul>
+                    <li>
+                        <a href="{:U('shipping_way',array('oid'=>$order['oid']))}" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" style="width:100%;">配送方式 <span class="pull-right"><empty name="order['service_type']">上门服务<else />快递物流</empty></span></div>
+                                </div>
+                            </div>
+                            <span class="icon icon-right"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:U('invoice_pick',array('oid'=>$order['oid']))}" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" style="width:100%;">发票信息<span class="pull-right">{$order['invoice_title']}</span></div>
+                                </div>
+                            </div>
+                            <span class="icon icon-right"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="item-link item-content">
+                            <div class="item-inner row">
+                                <span class="col-15">留言</span>
+                                <form class="col-85" action="#" >
+                                    <textarea name="remarks" id="" cols="30" rows="7" placeholder="如有特别需求请留言"></textarea>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <if condition="$order.order_type eq '0'">
+            <div class="list-block media-list media_item media_item_one">
+                <ul>
+                    <li>
+                        <a href="{:U('coupons_pick',array('oid'=>$order['oid']))}" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" style="width:100%;">代金券<span class="pull-right">{$order['discount']}元</span></div>
+                                </div>
+                            </div>
+                            <span class="icon icon-right"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </if>
+            <div class="list-block media-list pay_mode">
+                <ul>
+
+                    <li>
+                        <label class="label-checkbox item-content">
+                            <div class="item-media"><img src="{$resource_path}/image/submit_image/004.png" style='width: 2.2rem;'></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">微信支付</div>
+                                </div>
+                                <div class="item-subtitle">推荐安装微信5.0及以上版本的用户使用</div>
+                            </div>
+                            <input type="radio" name="payment_type" value="0" checked="checked">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                        </label>
+                    </li>
+
+                </ul>
+            </div>
+
+            <if condition="$order.order_type eq 1">
+            <div class="list-block media-list" style="margin-top:0.5rem; margin-bottom: 0.5rem;">
+                <ul>
+                    <li>
+                        <label class="label-checkbox item-content">
+                            <input type="checkbox" name="agreement" id="agreement" value="1">
+                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title"><a href="{:U('Setting/rent',array('oid'=>$order['oid']))}" style="color:#000;">租赁协议</a></div>
+                                </div>
+                                <div class="item-subtitle"><a href="{:U('Setting/rent',array('oid'=>$order['oid']))}" style="color:#000;">必须同意租赁协议才可以进行下一步</a></div>
+                            </div>
+                        </label>
+
+                    </li>
+                </ul>
+            </div>
+            </if>
+            <div style=" height: 50px;"></div>
+
+            <div class="list-block fix_bottom">
+                <span style="font-size: 0.7rem">合计：<span style="font-size: 0.8rem;font-weight: 600;color: #c72b2c;">￥{$order.order_amount_to_pay}</span></span>
+                <a href="#" id="btn_confirm_payment"><span>去结算</span></a>
+            </div>
+        </div>
+    </div>
+<include file="Common/footer" />
+<script>
+    $(document).on("click", "#btn_confirm_payment", function () {
+
+        //判断 contact 是否输入
+        
+        //增加判断,暂时不能提交
+        $.alert("商城升级中,5月9日正式上线,敬请期待!");
+        return false;
+        
+
+        var contact = $("#contact").val();
+        if (contact.length == 0)
+        {
+            $.alert("收货人不能为空");
+            return false;
+        }
+
+
+        <if condition="$order.order_type eq 1">
+        if ($('#agreement').is(':checked')) {
+            window.location.href = "{:U('Shoppingcart/payment')}?oid={$order.oid}";
+        } else
+        {
+            $.alert("需同意租赁协议才可以结算支付");
+            return false;
+        }
+        <else/>
+            window.location.href = "{:U('Shoppingcart/payment')}?oid={$order.oid}";
+        </if>
+    });
+
+    $(document).on("click", ".order_cancel_btn", function () {
+        var oid = {$order.oid};
+        $.confirm('确定取消订单?', function () {
+            $.post("{:U('cancel_order')}", {'oid': oid}, function (data) {
+                if (!data.err) {
+                    window.location.href = "{:U('M/Index/index')}";
+                } else {
+                }
+            }, "json");
+        });
+
+    });
+</script>
+</body>
+</html>

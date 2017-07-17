@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>选择地址</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7.css">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7-swiper.css">
+        <style>
+            a {
+                color: #fff;
+            }
+            .list-block .item-link .item-inner{
+                background-image: url("{$resource_path}/light7/img/i-list-chevron-right.png");
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <header class="bar bar-nav">
+                <a class="icon icon-left pull-left" href="{:U('Shoppingcart/submit_order',array('oid'=>$oid))}"></a>
+                <h1 class="title">选择地址</h1>
+                <a class="button button-link button-nav pull-right" href="{:U('Member/address_add',array('oid'=>$oid))}">
+                    <span class="icon icon-edit"></span>
+                </a>
+            </header>
+            <div class="content">
+                <div class="list-block media-list inset">
+                    <ul>
+                        <volist name="address_res" id="vo">
+                        <li data-id="{$vo['id']}" class="pick_address_item">
+                            <a href="#" class="item-link item-content">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">{$vo['contact']}&nbsp;&nbsp;<span style=" font-size: 0.7rem; font-weight: normal;">{$vo['contact_mobile']}</span></div>
+                                    </div>
+                                    <div class="item-subtitle">{$vo['address']}</div>
+                                </div>
+                            </a>
+                        </li>  
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <script type='text/javascript' src='{$resource_path}/light7/js/jquery.js' charset='utf-8'></script>
+        <script type="text/javascript">$.config = {router: false}</script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7.js' charset='utf-8'></script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7-swiper.js' charset='utf-8'></script>
+        <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js' charset='utf-8'></script>
+        <script type="text/javascript">
+            wx.config({
+                debug: false,
+                appId: '{$signPackage["appId"]}',
+                timestamp: '{$signPackage["timestamp"]}',
+                nonceStr: '{$signPackage["nonceStr"]}',
+                signature: '{$signPackage["signature"]}',
+                jsApiList: [
+                    // 所有要调用的 API 都要加到这个列表中
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'scanQRCode'
+                ]
+            });
+
+
+
+
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                //初始化
+                $.init();
+
+                
+                $(document).on("click",'.pick_address_item',function(){
+                    var url = "{:U('Shoppingcart/address_pick')}";
+                    var oid = {$oid};
+                    var address_id = $(this).attr("data-id");
+                    $.ajax({
+                        type: 'post',
+                        url: url,
+                        data: {oid: oid, id:address_id},
+                        dataType: 'json',
+                        success: function (data) {
+                            window.location.href="{:U('submit_order',array('oid'=>$oid))}";
+                        }
+                    });
+                });
+
+
+
+            });
+        </script>
+    </body>
+
+</html>

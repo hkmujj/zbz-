@@ -1,0 +1,59 @@
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+    <title>珍宝斋交易订单支付</title>
+    <script type="text/javascript">
+	//调用微信JS api 支付
+	function jsApiCall()
+	{
+		WeixinJSBridge.invoke(
+			'getBrandWCPayRequest',
+                        {$jsApiParameters},
+			function(res){
+//				WeixinJSBridge.log(res.err_msg);
+                                var testinfo =JSON.stringify(res);  
+//                                alert(res.err_msg);
+                                if(res.err_msg=="get_brand_wcpay_request:ok")
+                                {
+                                    window.location.href="{:U('Orders/detail')}?oid={$order.oid}&from_src=payment";
+                                }
+                                else
+                                {
+                                    alert("支付失败,请重新操作");
+                                    window.history.go(-1);
+                                }
+//				alert(res.err_code+"--"+res.err_desc+"--"+res.err_msg);
+                               
+//                                windows.location.reload();
+			}
+		);
+	}
+
+	function callpay()
+	{
+		if (typeof WeixinJSBridge == "undefined"){
+		    if( document.addEventListener ){
+		        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+		    }else if (document.attachEvent){
+		        document.attachEvent('WeixinJSBridgeReady', jsApiCall); 
+		        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+		    }
+		}else{
+		    jsApiCall();
+		}
+	}
+	</script>
+	
+</head>
+<body onload="callpay()">
+    <br/>
+	<div align="center">
+		<button style="width:210px; height:50px; border-radius: 15px;background-color:#c72b2c; border:0px #c72b2c solid; cursor: pointer;  color:white;  font-size:16px;" type="button" onclick="callpay()" >立即支付</button>
+	</div>
+    <div align="center" style="margin-top: 3rem;">
+        <a href="{:U('Index/index')}" style=" color: #ccc;" >返回首页</a>
+	</div>
+</body>
+</html>

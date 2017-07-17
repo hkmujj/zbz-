@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+<style>
+.content{
+    padding: 0 1rem;
+}
+.list-block .item-title.label {
+    width: 0%;
+}
+input{
+    border: none;
+}
+.list-block .item-content {
+     padding-left: 0.4rem;
+}
+.list-block ul {
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    /* margin: 0; */
+    border-top: 0px solid #e7e7e7;
+    border-bottom: 0px solid #e7e7e7;
+}
+.button-danger.button-fill {
+    color: red;
+    background-color: transparent;
+}
+.btn{
+    margin-top: 1rem;
+}
+.btn .button {
+    height: 2rem;
+    font-size: .7rem;
+    line-height: 2rem;
+    color: #fff;
+    background: #e31a2c;
+    border: 0px solid #0894ec;
+}
+</style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" onclick="javascript:history.go(-1);">
+                <span class="icon icon-left"></span>
+            </a>
+            <h1 class="title">
+                绑定手机
+            </h1>
+        </header>
+
+        <!-- 工具栏 -->
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="list-block">
+                
+                <notempty name="memberinfo['mobile']">
+                    <div class="content-block-title">手机号码已绑定</div>
+                    <div class="list-block">
+                        <ul>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title">{$memberinfo['mobile']}</div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    <else />
+                    <form id="myForm">
+                        <ul>
+                            <!-- Text inputs -->
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label"></div>
+                                        <div class="item-input">
+                                            <input type="nubmer" name='mobile' id="mobile" placeholder="输入手机号码" min="0" inputmode="numeric" pattern="[0-9]*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label"></div>
+                                        <div class="item-input row">
+                                            <div class='col-70'>
+                                                <input type="text" name='codes' id="codes" placeholder=" 输入验证码"> 
+                                            </div>
+                                            <div class='' style='vertical-align:middle;position:relative; display: inline-block;'>
+                                                <button type="button" class="button button-fill button-danger btn_get_code" style=" margin-top: 0.4rem;">获取验证码 </button>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn">
+                            <input class="button btn_submit" type="button" value="立即绑定">
+                        </div>
+
+                    </form>
+                </notempty>
+                
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+<script>
+    $(document).on('click', '.btn_get_code', function () {
+        
+        //判断手机号码
+        var mobile = $("#mobile").val();
+        var reg = /^1[0-9]{10}$/;
+        var flag = reg.test(mobile); //true
+
+        if (flag)
+        {
+            $(this).attr("disabled",true).css("background","#ccc").text("验证码已发");
+            $.get("{:U('mobile_send_code')}", $('#myForm').serialize(), function (data) {
+                if (data.err == 0) {
+//                    $.alert(data.msg);
+                    $.toast(data.msg);
+                    
+                } else {
+                    $.alert(data.msg);
+                }
+            }, "json");
+        }
+        else
+        {
+            $.alert('手机号码错误');
+        }
+
+
+
+    });
+    
+    $(document).on('click', '.btn_submit', function () {
+        //判断手机号码
+        var mobile = $("#mobile").val();
+        var reg = /^1[0-9]{10}$/;
+        var flag = reg.test(mobile); //true
+
+        if (flag)
+        {
+            var codes = $("#codes").val();
+            $.post("{:U('mobile')}", $('#myForm').serialize(), function (data) {
+                if (data.err == 0) {
+//                    $.alert(data.msg);
+                    $.toast(data.msg);
+                    window.location.reload();
+                } else {
+                    $.alert(data.msg);
+                }
+            }, "json");
+        }
+        else
+        {
+            $.alert('手机号码错误');
+        }
+    });
+</script>
+
+</body>
+</html>

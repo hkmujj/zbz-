@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .card{
+            box-shadow:none;
+        }
+        .page img
+        {
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" style="background-color: #fff;">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <button class="button button-link button-nav pull-left" onclick="javascript:history.go(-1);">
+                <span class="icon icon-left"></span>
+
+            </button>
+            <h1 class="title">
+                详情
+            </h1>
+            <a class="button button-link button-nav pull-right" href="{:U('Index/index')}">
+                <span class="icon icon-home"></span>
+                
+            </a>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="card">
+                <div class="card-header">{$news.title}</div>
+                <div class="card-content">
+                    <div class="card-content-inner">{$news.content|html_entity_decode}</div>
+                </div>
+                <div class="card-footer">{$news.ctime|date="Y-m-d",###}</div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+<include file="Common/footer" />
+
+
+
+</body>
+</html>

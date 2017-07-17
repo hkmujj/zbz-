@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <include file="Common/head" />
+
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+        /*list部分*/
+        .list-block {
+            background: white;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        /*top_icon*/
+        .top_icon{
+            position: absolute;
+            width: 100%;
+            height: 3rem;
+            line-height: 3rem;
+            padding: 0rem .8rem;
+            font-size: 1.3rem;
+            left: 0;
+            top:0;
+            line-height: 4rem;
+        }
+        .top_icon a {
+            color: #e31a2c;
+        }
+        .top_icon a:nth-child(1){
+            float: left;
+        }
+        .top_icon a:nth-child(2){
+            float: right;
+
+        }
+        .top_icon a:nth-child(3){
+            float: right;
+            margin-right: 1rem;
+        }
+        .top_icon a:nth-child(4){
+            float: right;
+            margin-right: 1rem;
+        }
+        /*desc*/
+        .desc{
+            padding: 0.6rem 0.75rem;
+        }
+        .desc span{
+            display: inline-block;
+            font-size: 0.6rem;
+        }
+        .desc>span:first-child{
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .rent_free{
+            color: #e6312e;
+            padding-left: 0.5rem;
+           margin-bottom: 0.3rem;
+            font-size: 1rem;
+            font-weight: 600; 
+            float: right;
+        }
+        .desc_btn{
+            color: #e6312e;
+            margin-left: 0.2rem;
+            border:1px solid #e6312e;
+            padding: 0rem 0.2rem;
+            border-radius: 0.2rem;
+        }
+        .author_desc.media-list .item-media img, .author_desc li.media-item .item-media img {
+            display: block;
+            border-radius: 50%;
+        }
+        .author_desc ul {
+            border-top: 0px solid #e7e7e7;
+            border-bottom: 0px solid #e7e7e7;
+        }
+        .author_desc .item-link .item-inner {
+            padding-right: 0rem;
+        }
+        .author_desc .item-link .item-inner .item-title,.item-subtitle,.item-text{
+            color: #4f5458;
+        }
+        .author_desc .item-content {
+            padding-left: .85rem;
+            padding-right: 0.85rem;
+        }
+        .author_desc.media-list .item-inner, .author_desc li.media-item .item-inner {
+            padding-top: 1rem;
+        }
+        /*media_video*/
+        .media_video{
+            padding: 0.5rem 0.75rem;
+            padding-bottom: 0;
+        }
+        iframe{
+            display: block;
+            width: 96%;
+            height: 9rem;
+            margin: 0 auto;
+        }
+        .articl_text{
+            padding: 0.8rem 0;
+        }
+        /*product_desc*/
+        .product_desc{
+            padding: 0.5rem 0.75rem;
+        }
+        .product_desc_title{
+            margin: 0.4rem auto;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        /*fix_bottom*/
+        .fix_bottom{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2.8rem;
+            line-height: 2.8rem;
+            margin-bottom: 0;
+            z-index: 1000;
+            background: #ccc;
+            text-align: center;
+            color:#c72b2c;
+        }
+        .fix_bottom a:first-child>span{
+            background: #fff;
+            color: #404040;
+            font-size: 0.85rem;
+        }
+        .fix_bottom a span{
+            float: left;
+            display: inline-block;
+            text-align: center;
+            width: 50%;
+            background: #e31a2c;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+
+        /*layer*/
+        .modal-inner {
+            position: relative;
+            padding: 0rem;
+            height: 0;
+            background: transparent;
+            border-bottom: 0px solid #b5b5b5;
+            border-radius: .35rem .35rem 0 0;
+        }
+        .modal-button {
+            padding: 0rem;
+        }
+        .modal {
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            margin-left: 0rem;
+            margin-top: 0rem!important;
+        }
+        .modal-buttons {
+            height: 100%;
+        }
+        .modal-button:active {
+            background: none!important;
+        }
+        .modal-button {
+            height: 100%;
+            background: rgba(232, 232, 232, 0);
+            border-right: 0px solid #b5b5b5;
+
+        }
+        
+        
+        .toast {
+/*            position: relative;
+            padding: 0rem;
+            height: 0;
+            background: transparent;
+            border-bottom: 0px solid #b5b5b5;
+            border-radius: .35rem .35rem 0 0;*/
+            
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            margin-left: 0rem;
+            margin-top: 0rem!important;
+        }
+        .img_show{
+            min-height: 10rem;
+            max-height: 26rem;
+            overflow: hidden;
+            background-image: url("{$work.thumb}");
+            background-color: #eeeeee;
+            background-size:100% auto;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        .has_saled{
+                position: absolute;
+                bottom: 2rem;
+                right: 0.5rem;
+                display: block;
+                width: 4rem;
+                height: 1rem;
+        }
+        .has_saled img{
+            width: 100%;
+        }
+        
+        .top_icons{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .top_icons img{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .yes_click_div img{
+            width: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="content">
+        <!--底部导航-->
+        <if condition='$work.wstatus eq 0'>
+            <if condition='$order_type eq 0'>
+                <div class="list-block fix_bottom">
+                    <a href="#" class="buy_it"><span style="border-top:1px solid #e31a2c;">加入购物车</span></a>
+                    <a href="#" class="buy_it_quickly"><span style="border-top:1px solid #e31a2c;">我要买</span></a>
+                </div>
+            <else/>
+                <div class="list-block fix_bottom">
+                <a href="#" class="rent_it"><span style='width:34%;border-top:1px solid #e31a2c;'>加入购物车</span></a>
+                <a href="#" class="rent_it_quickly"><span style='width:33%; background-color: #8e8b8b;border-top:1px solid #8e8b8b;'>我要租</span></a>
+                <a href="#" class="buy_it_quickly"><span style='width:33%;border-top:1px solid #e31a2c;'>我要买</span></a>
+            </div>
+            </if>
+            
+            <elseif condition="$work.wstatus eq 1"/>
+            
+            <elseif condition="$work.wstatus eq 2"/>
+            
+            
+            
+            <elseif condition="$work.wstatus eq 3"/>
+            <div class="list-block fix_bottom" style=" background-color: #e31a2c; color: #fff;" onclick="javascript:window.location.href='tel:4000691400'">
+                点击联系业务专员
+            </div>
+            <else/>
+            <div class="list-block fix_bottom">
+                非卖品
+            </div>
+        </if>
+        
+        <div class="list-block">
+            <div class="img_show" >
+                <if condition="$order_type eq 1">
+                    <if condition="$work.wstatus eq 1">
+                        <div class='has_saled'>
+                             <img src="{$resource_path}/image/sale_chock.png" />
+                         </div> 
+                     </if>
+                    <if condition="$work.wstatus eq 2">
+                        <div class='has_saled'>
+                             <img src="{$resource_path}/image/rent_chock.png" />
+                         </div> 
+                     </if>
+                <else/>
+                    
+                    <if condition="$work.wstatus eq 1">
+                        <div class='has_saled'>
+                             <img src="{$resource_path}/image/sale_chock.png" />
+                         </div> 
+                     </if>
+                    <if condition="$work.wstatus eq 2">
+                        <div class='has_saled'>
+                             <img src="{$resource_path}/image/sale_chock.png" />
+                         </div> 
+                     </if>
+
+                </if>
+                
+                
+            </div>
+            <div class="top_icon">
+                <a href="javascript:history.go(-1);" class="top_icons">
+                   <img src="{$resource_path}/image/btn_back.png" /> 
+                </a>
+                <a href="#" class="top_icons create-actions open-tabs-modal pull-right">
+                    <img src="{$resource_path}/image/btn_share.png" />
+                </a>
+                <if condition='$ifcollection eq 1'>
+                    <a href="#" class="top_icons  pull-right uncollect_it">
+                        <img id="collect_it_img" src="{$resource_path}/image/btn_uncollection.png" />
+                    </a>
+                    <else />
+                    <a href="#" class="top_icons pull-right collect_it">
+                        <img id="collect_it_img" src="{$resource_path}/image/btn_collection.png" />
+                    </a>
+                </if>
+                
+                <a class="top_icons pull-right" href="{:U('Shoppingcart/index')}">
+                    <img  src="{$resource_path}/image/btn_shoppingcart.png" />
+                </a>
+                
+            </div>
+            <div class="desc">
+                <span>{$work.name}</span><span class="rent_free" style="font-size:1rem;"><if condition="$order_type eq 1">半年免租</if></span><br>
+                <if condition='($work.wstatus eq 0) OR ($work.wstatus eq 1) OR ($work.wstatus eq 2)'>
+                <span style="color: #ff2320;font-size: 1rem">￥{$work.buy_price} </span>
+                <span style="color: #777777;font-size: 0.7rem">&nbsp;|&nbsp;租金￥{$work.rent_price}/年</span>
+                <span class="desc_btn">支持代金券</span><br>
+                </if>
+                <span style="font-size: 0.7rem;color: #4f5458;">{$work.work_cat_name} {$work.work_topic_name}&nbsp;&nbsp; {$work.wremarks}|{$work.wwidth}cm*{$work.wheight}cm &nbsp;&nbsp; 装裱状态：<if condition='$work.package_status eq "0"'>未装裱<else/>已装裱</if></span><br>
+                <span style="font-size: 0.7rem;color: #4f5458;" class="yes_click_div">
+                    <img  src="{$resource_path}/image/yes_click.png" /> 100%原创真品,雅昌权威备案
+                    <img  src="{$resource_path}/image/yes_click.png" /> 48小时发货
+                    <img  src="{$resource_path}/image/yes_click.png" /> 7天无理由退款
+                </span>
+                <!--<span style="font-size: 0.7rem;color: #4f5458;"></span>-->
+            </div>
+        </div>
+        <div class="list-block media-list author_desc">
+            <ul>
+                <li>
+                    <a href="{:U('Artist/detail',array('id'=>$artist['artist_id']))}" class="item-link item-content">
+                        <div class="item-media"><img src="{$artist.thumb}" style='width: 4.5rem; height: 4.5rem;'></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">{$artist.artist_name}</div>
+                            </div>
+                            <div class="item-subtitle">{$artist.school}</div>
+                            <div class="item-text">
+                                <span>作品数</span>
+                                <span></span>{$artist.work_count}
+                                <span>粉丝</span>
+                                <span></span>{$artist.fellowed_count}
+                            </div>
+
+                        </div>
+                        <span class=" icon icon-right" ></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="list-block media_video">
+            <notempty name="artist.video">
+            <div class="content-block">
+              <video src="{$artist.video}" style="width:100%;" controls="controls">
+                                your browser does not support the video tag
+                                </video>  
+            </div>
+            </notempty>
+            <div class="articl_text">
+                <div style="text-indent: 1.8em;font-size: 0.7rem;color: #4f5458;">
+                    {$work['description']|html_entity_decode}
+                </div>
+            </div>
+        </div>
+        <div class="list-block product_desc" >
+            <div class="product_desc_title">保养说明</div>
+            <div style="text-indent: 1.8em;font-size: 0.7rem;color: #4f5458;">
+                    {$work['instruction']|html_entity_decode}
+                    {$maintain['content']|html_entity_decode}
+                </div>
+        </div>
+        <div class="list-block" style="height: 5rem;display: block;"></div>
+
+
+
+
+    </div>
+</div>
+
+<include file="Common/footer" />
+
+<script>
+    $(function () {
+        
+        var img = new Image();
+        var img_url = '{$work.thumb}?'+Date.parse(new Date());
+        // 改变图片的src
+        img.src = img_url;
+
+        // 加载完成执行
+        img.onload = function(){
+            // 打印
+            console.log('width:'+img.width+',height:'+img.height);
+            
+            var rate = img.width/img.height;
+            
+            console.log(rate);
+            
+            if(rate>1)
+            {
+                $(".img_show").css("min-height",img.height/2+"px").animate({height:'"'+img.height/2+'px"'});
+            }
+            else if((rate<1) && (rate>0.5))
+            {
+                $(".img_show").css("min-height",img.height/2+"px").animate({height:'"'+img.height/2+'px"'});
+            }
+            else
+            {
+                $(".img_show").css("min-height",img.width*0.6+"px").animate({height:'"'+img.width*0.6+'px"'});
+            }
+        };
+        
+        $(document).on('click','.open-tabs-modal', function () {
+            $.modal({
+                title:'',
+                text: '',
+                buttons: [
+                    {
+                        text: '<img src="{$resource_path}/image/layer.png" style="width: 100%;height: 100%">',
+                        bold: true
+                    },
+                ]
+            })
+        });
+    });
+    
+    $(document).on("click",'.rent_it',function(){
+        var url = "{:U('Shoppingcart/add')}";
+        var id = {$work['work_id']};
+        var thisone = $(this);
+        $.ajax({
+        type: 'post',
+                url: url,
+                data: {type: 1, id:id},
+                dataType: 'json',
+                success: function (data) {
+                $.toast(data.msg);
+                }
+        });
+    });
+    
+    $(document).on("click",'.buy_it',function(){
+        var url = "{:U('Shoppingcart/add')}";
+        var id = {$work['work_id']};
+        $.ajax({
+        type: 'post',
+                url: url,
+                data: {type: 0, id:id},
+                dataType: 'json',
+                success: function (data) {
+                $.toast(data.msg);
+                }
+        });
+    });
+    
+    
+    $(document).on("click",".buy_it_quickly",function(){
+        var url = "{:U('Shoppingcart/creat_order_buy_quickly')}";
+        var id = {$work['work_id']};
+        $.ajax({
+        type: 'get',
+                url: url,
+                data: {type: 0, work_id:id},
+                dataType: 'json',
+                success: function (data) {
+                if(data.err==0)
+                {
+                    window.location.href='{:U("Shoppingcart/submit_order")}?oid='+data.order_id;
+                }
+                else
+                {
+                    $.alert(data.msg);
+                }
+                }
+        });
+    });
+    
+    $(document).on("click",".rent_it_quickly",function(){
+        var url = "{:U('Shoppingcart/creat_order_rent_quickly')}";
+        var id = {$work['work_id']};
+        $.ajax({
+        type: 'get',
+                url: url,
+                data: {type: 1, work_id:id},
+                dataType: 'json',
+                success: function (data) {
+                if(data.err==0)
+                {
+                    window.location.href='{:U("Shoppingcart/submit_order")}?oid='+data.order_id;
+                }
+                else
+                {
+                    $.alert(data.msg);
+                }
+                }
+        });
+    });
+    
+    $(document).on('click', '.collect_it', function () {
+        var url = "{:U('collection')}";
+        var id = {$work['work_id']};
+        var thisone = $(this);
+        $.ajax({
+        type: 'post',
+                url: url,
+                data: {status: 1, id:id},
+                dataType: 'json',
+                success: function (data) {
+                thisone.addClass("uncollect_it").removeClass("collect_it");
+                //图标变化
+                $("#collect_it_img").attr("src","{$resource_path}/image/btn_uncollection.png");
+                $.toast(data.msg);
+                }
+        });
+    });
+    $(document).on('click', '.uncollect_it', function () {
+
+        var url = "{:U('collection')}";
+        var id = {$work['work_id']};
+        var thisone = $(this);
+        $.ajax({
+        type: 'post',
+                url: url,
+                data: {status: 0, id:id},
+                dataType: 'json',
+                success: function (data) {
+                thisone.addClass("collect_it").removeClass("uncollect_it");
+                //图标变化
+                $("#collect_it_img").attr("src","{$resource_path}/image/btn_collection.png");
+                $.toast(data.msg);
+                }
+        });
+    });
+    
+    $(document).on("click",".go_back_btn",function(){
+//        $.alert("dfdfd");
+        window.history.back();
+    });
+    
+   $(function(){
+        /*=== 默认为 standalone ===*/
+        var myPhotoBrowserStandalone = $.photoBrowser({
+            photos : [
+                '//img.alicdn.com/tps/i3/TB1kt4wHVXXXXb_XVXX0HY8HXXX-1024-1024.jpeg',
+                '//img.alicdn.com/tps/i1/TB1SKhUHVXXXXb7XXXX0HY8HXXX-1024-1024.jpeg',
+                '//img.alicdn.com/tps/i4/TB1AdxNHVXXXXasXpXX0HY8HXXX-1024-1024.jpeg',
+            ]
+        });
+        //点击时打开图片浏览器
+        $(document).on('click','.pb-standalone',function () {
+//          myPhotoBrowserStandalone.open();
+        });
+          
+    });
+
+
+
+</script>
+</body>
+</html>

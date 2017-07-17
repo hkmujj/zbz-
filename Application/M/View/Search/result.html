@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Common/head" />
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+
+        /*list部分*/
+        .list-block {
+            background: white;
+            /*margin: .55rem 0;*/
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        /*搜索部分*/
+        .searchbar {
+            height: 2.5rem;
+            padding: 0.5rem 1rem;
+            background: #c72b2c;
+        }
+        .searchbar .search-input{
+            background: #f2f3f5;
+            padding-left: 1.4rem;
+            border:1px solid #e9e9e9;
+            border-radius: 1rem;
+            font-size: .7rem;
+            color: #8f949a;
+        }
+        .searchbar .search-input input {
+            height: 1.5rem;
+            margin: 0;
+            font-size: 0.7rem;
+            color: #8f949a;
+        }
+        .searchbar .col-20 {
+            width: 15%;
+            margin-left: 4%;
+        }
+        .searchbar .col-70{
+            width: 68%;
+        }
+        .searchbar .col-10{
+            color: #fff;
+            display: inline-block;
+            height: 100%;
+            font-size: 1.1rem;
+            margin-right: 0.4rem;
+        }
+        .searchbar .col-10>span{
+            display: block;
+        }
+        .button.button-fill{
+            color: #c72b2c;
+            line-height: 1.65rem;
+            background: #fff;
+            float: right;
+            font-size: 0.75rem;
+            border-radius: 0.3rem;
+        }
+        .button {
+            height: 1.55rem;
+        }
+        .search-input .icon {
+            left: .65rem;
+        }
+        /*content*/
+        .content-block-title {
+            margin: .75rem .5rem;
+            font-size: 0.8rem;
+        }
+        .list-block .item-inner {
+            border-bottom: 0px solid #e7e7e7;
+        }
+        .list-block .item-inner .item-title,.item-subtitle {
+            font-size: 0.75rem;
+            color: #404040;
+            margin-bottom: 0.2rem;
+        }
+        .list-block .item-content {
+            border-bottom: 1px solid #e7e7e7;
+        }
+        /*artist*/
+        .artist img{
+            border-radius: 50%;
+        }
+        /*unLine_paint*/
+        .unLine_paint.media-list .item-inner, .list-block li.media-item .item-inner {
+            padding-top: 7%;
+        }
+        .unLine_paint.media-list .item-inner, .list-block li.media-item .item-inner{
+            padding-top: 3%;
+        }
+        
+        .buttons-row .button {
+            color: #fff;
+            border-color: #fff;
+        }
+        .button {
+            height: 1.35rem;
+            line-height: 1.35rem;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="content">
+        <div class="list-block search">
+            <form method='GET' action='{:U("result")}'>
+            <div class="searchbar row">
+                <a href="{:U('index')}" class="col-10"><span class="icon icon-left"></span></a>
+                <div class="search-input col-70">
+                    <label class="icon icon-search" for="search"></label>
+                    <input type="search" id='search' placeholder='输入搜索关键词' name='keywords'/>
+                </div>
+                <button type="submit" class="button button-fill button-primary col-20">搜索</button>
+            </div>
+            </form>
+        </div>
+        
+        <empty name='result3'>
+            <empty name='result2'>
+                <empty name='result1'>
+            
+                    <div class="content-block" style="user-select: text;">
+                        <div class="row" style="margin-top: 3rem; user-select: text;">
+                                <div class="col-33" style="user-select: text;">&nbsp;</div>
+                                <div class="col-33" style="user-select: text;"><a href="javascript:history.go(-1);" class="button button-danger" style="user-select: text;">暂无数据</a></div>
+                                <div class="col-33" style="user-select: text;">&nbsp;</div>
+                            </div>
+
+
+                    </div>
+                    </empty>
+                </empty>
+        </empty>
+        
+        
+        <notempty name='result3'>
+        <div class="content-block-title">艺术画</div>
+        <div class="list-block media-list">
+            <ul>
+                <volist name="result3" id="vo">
+                <li>
+                    <a href="{:U('Work/detail')}?id={$vo.work_id}" class="item-link item-content">
+                        <div class="item-media" style='width: 4rem; height: 4rem; overflow: hidden;'><img src="{$vo.thumb}" style='width: 4rem; '></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">{$vo.name}</div>
+                            </div>
+                            <div class="item-subtitle">{$vo.wremarks} | {$vo.wwidth}*{$vo.wheight}CM</div>
+                            <div class="item-subtitle" style="color: #e31a2c;">￥{$vo.buy_price}</div>
+
+                        </div>
+                    </a>
+                </li>
+                </volist>
+
+            </ul>
+        </div>
+        </notempty>
+        
+        
+        <notempty name='result2'>
+        <div class="content-block-title">艺术家</div>
+        <div class="list-block media-list artist">
+            <ul>
+                <volist name='result2' id='vo'>
+                <li>
+                    <a href="{:U('Artist/detail')}?id={$vo.artist_id}" class="item-link item-content">
+                        <div class="item-media"><img src="{$vo.thumb}" style='width: 2.2rem;'></div>
+                        <div class="item-inner">
+                            <div style="margin-top: 3.5%">{$vo.artist_name}</div>
+                        </div>
+                    </a>
+                </li>
+                </volist>
+            </ul>
+        </div>
+        </notempty>
+        
+        <notempty name='result1'>
+        <div class="content-block-title">线下画廊</div>
+        <div class="list-block media-list unLine_paint">
+            <ul>
+                <volist name='result1' id='vo'>
+                <li>
+                    <a href="{:U('Gallery/detail')}?id={$vo.gallery_id}" class="item-link item-content">
+                        <div class="item-media" style='width: 4rem; height: 4rem; overflow: hidden;'><img src="{$vo.thumb}" style='width: 4rem;'></div>
+                        <div class="item-inner">
+                            <div class="item-title-row">
+                                <div class="item-title">{$vo.gallery_name}</div>
+                            </div>
+                            <div class="item-subtitle">{$vo.address}</div>
+
+                        </div>
+                    </a>
+                </li>
+                </volist>
+            </ul>
+        </div>
+        </notempty>
+      
+        
+
+
+    </div>
+</div>
+
+<include file="Common/footer" />
+
+</body>
+</html>

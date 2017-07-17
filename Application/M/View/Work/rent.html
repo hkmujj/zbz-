@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>租画</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7.css">
+        <link rel="stylesheet" href="{$resource_path}/light7/css/light7-swiper.css">
+        <style type="text/css">
+            .infinite-scroll-preloader {
+                margin-top:-20px;
+            }
+            .list-block ul{
+                width: 47%;list-style:none;float:left;margin-right:3%; background-color: #efeff4;
+            }
+
+            .list-block ul li{margin-bottom:20px; background-color: #ffffff; text-align:center;}
+            .list-block ul li img{width:96%;margin-top:2%;}
+            .bar-nav a{color:#fff;}
+            .card-header, .card-footer{
+                padding: 0.1rem 0.75rem;
+                min-height: 1rem;
+            }
+            .card-header a.link, .card-footer a.link{
+                height: 1.5rem;
+                line-height: 1.5rem;
+                font-size: 0.6rem;
+            }
+            .detail_btn{
+                font-size:0.5rem;
+                line-height:0.8rem;
+                height: 0.8rem;
+                padding:0 0.3rem;
+            }
+            /*pannel*/
+            body.with-panel-right-reveal .page {
+                transform: translate3d(-85%, 0, 0);
+            }
+            .panel {
+                width: 85%;
+                background: #f5f5f5;
+            }
+            .content-block {
+                padding: 0rem;
+                margin: 0;
+                color: #6d6d72;
+                border:1px solid #d0d0d0;
+                border-right:none ;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                overflow: auto
+            }
+            .list-block_menu{
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                margin-bottom: 0;
+                z-index: 1000;
+                text-align: center;
+            }
+            .list-block {
+                margin: .75rem 0;
+                margin-bottom: 0;
+                padding: 0 0.75rem;
+                font-size: .85rem;
+            }
+            .panel .row .col-25 {
+                width: 21%;
+                margin-bottom: 4%;
+                margin-left: 0%;
+                margin-right: 4%;
+            }
+            .panel .row .col-50{
+                margin-bottom: 4%;
+                margin-left: 0%;
+                margin-right: 4%;
+            }
+            .list-block-title{
+                font-size: 0.75rem;
+                margin: 0.75rem 0;
+                padding: 0 0.75rem;
+                color: #000;
+            }
+            .panel .button {
+                font-size: .65rem;
+                color: #000;
+                background: #e7e9ee;
+                border: 0px solid #0894ec;
+                line-height: 1.35rem;
+            }
+            .panel .btn{
+                width: 100%;
+                border-top: 1px solid #eaeaea;
+                margin: 0;
+                padding: 0;
+            }
+            .panel .btn .col-50{
+                width: 50%;
+                height: 2.2rem;
+                line-height: 2.2rem;
+
+                margin: 0;
+                text-align: center;
+                font-size: .85rem;
+            }
+            .panel .btn .col-50:first-child{
+                color: #000;
+                background: #fff;
+            }
+            .panel .btn .col-50:last-child{
+                background: #e31a2c;
+            }
+            .button.active, .button.active:active {
+                color: #fff;
+                background: #c72b2c;
+                border: 0px solid #0a8ddf;
+            }
+            .button.active1, .button.active1:active {
+                color: #000;
+                background: #fff;
+                border: 1px solid #c72b2c;
+            }
+
+            .list-block input[type="number"] {
+                height: 1.35rem; 
+                line-height: 1.35rem;
+                font-size:0.65rem;
+                text-align: center;
+            }
+
+
+            .content a{color:#3d4145}
+            .card-footer{
+                border-bottom: none;
+                border-top: none;
+            }
+            .card{
+                max-height:21rem;
+                overflow: hidden;
+            }
+
+            .card-header.no-padding{
+                max-height: 16rem;
+                overflow: hidden;
+            }
+            .artest_shopping {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 20px;
+                z-index: 2;
+            }
+            .artest_shopping .shopping {
+                background-image: url(__PUBLIC__/M/image/shopping_cart.png);
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: block;
+                height: 29px;
+                width: 29px;
+                background-size: auto 29px;
+                z-index: 1;
+                margin: 8px 10px;
+            }
+            
+            .shipping_btn{
+                    height: 0.7rem;
+                    border: 1px solid #eee;
+                    font-size: 0.4rem;
+                    padding: 0 0.3rem;
+                    line-height: 0.7rem;
+                    color:#888;
+            }
+            
+            .shipping_btn_free{
+                color: #c72b2c;
+                border: 1px solid #c72b2c;
+                height: 0.7rem;
+                font-size: 0.4rem;
+                padding: 0 0.3rem;
+                line-height: 0.7rem;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- page 容器 -->
+        <div class="page">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left" href="{:U('Index/index')}">
+                    <span class="icon icon-left"></span>
+
+                </a>
+                <a class="icon icon-cart pull-right" href="{:U('Shoppingcart/index')}"></a>
+                <h1 class="title">租画</h1>
+            </header>
+
+
+
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll" data-distance="100">
+                <div class="row" style=" padding: 0.4rem; background-color: #fff;">
+                    <div class="col-33" style=' text-align: center;'>
+                        <if condition="$rank_type eq 1">
+                            <a href="{:U('Work/rent')}?rank_type=2">价格</a><span class="icon icon-down"></span>
+                            <elseif condition="$rank_type eq 2"/>
+                            <a href="{:U('Work/rent')}?rank_type=1">价格</a><span class="icon icon-up"></span>
+                            <else/>
+                            <a href="{:U('Work/rent')}?rank_type=1">价格</a></span>
+                        </if>
+
+                    </div>
+                    <div class="col-33" style=' text-align: center;'>
+                        <a href="{:U('Work/rent')}?rank_type=3">人气</a></div>
+                    <div class="col-33 open-panel" style=' text-align: center;'>筛选</div>
+                </div>
+
+                <volist name="works" id="vo">
+                    <div class="card demo-card-header-pic" style="user-select: text;" >
+                         <div valign="bottom" class="card-header color-white no-border no-padding" style="user-select: text;">
+                            <img class="card-cover" src="{$vo['thumb']}" alt="" style="user-select: text;" onclick=javascript:window.location.href="{:U('Work/detail')}?id={$vo['work_id']}&type=rent">
+                            <div class="artest_shopping"><span class="shopping" data-id="{$vo['work_id']}"></span></div>
+                        </div>
+                        <div class="card-footer" style="user-select: text; border-bottom: none;">
+                            <a href="{:U('detail',array('id'=>$vo['work_id'],'type'=>'rent'))}" class="link pull-left" style="user-select: text; font-size: 0.6rem;font-weight: 400;">{$vo['name']}&nbsp;<span class="button shipping_btn">48小时发货</span> <span class="button shipping_btn_free">半年免租</span></a>
+                            <span class=" pull-right" style="color:#c72b2c;font-size: 0.6rem;font-weight: 400;">￥{$vo['rent_price']}/年</span>
+                        </div>
+                        <div class="card-footer" style="user-select: text; padding-top: 0;">
+                            <a href="#" class="link" style="user-select: text;">
+                                {$vo['artist_name']} &nbsp;&nbsp; {$vo['wwidth']}*{$vo['wheight']}CM
+                            </a>
+                            <a href="{:U('detail',array('id'=>$vo['work_id'],'type'=>'rent'))}" class="button pull-right detail_btn" style="color:#fff; background-color:#c72b2c; border-color: #c72b2c; ">详情</a>
+                        </div>
+                    </div>
+                </volist>
+
+                <div class="list-block" style=' margin-top: 1rem;'>
+                    <ul class="list-container">
+                    </ul>
+                    <ul class="list-container"></ul>
+                </div>
+                <!-- preloader -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup, panel 等放在这里 -->
+        <div class="panel-overlay"></div>
+        <!-- Left Panel with Reveal effect -->
+        <div class="panel panel-right panel-cover">
+            <div class="content-block">
+                <div class="list-block-title">艺术分类</div>
+                <div class="list-block row">
+                    <span class="button col-25 cat_choose active" data-id="0">全部</span>
+                    <volist name="categories" id="vo">
+                        <span class="button col-25 cat_choose" data-id="{$vo.cat_id}">{$vo.name}</span>
+                    </volist>
+                </div>
+                <div class="list-block-title">艺术题材</div>
+                <div class="list-block row">
+                    <span class="button col-25 topic_choose active" data-id="0">全部</span>
+                    <volist name="topics" id="vo">
+                        <span class="button col-25 topic_choose" data-id="{$vo.topic_id}">{$vo.name}</span>
+                    </volist>
+                </div>
+                <div class="list-block-title">价格区间</div>
+                <div class="list-block row">
+                    <span class="button col-25 price_choose active" data-id="0">全部</span>
+                    <span class="button col-25 price_choose" data-id="1">0-1000</span>
+                    <span class="button col-50 price_choose" data-id="2">1000-2000</span>
+                    <span class="button col-50 price_choose" data-id="3">2000-5000</span>
+                    <span class="button col-50 price_choose" data-id="4">5000以上</span>
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="起始价格" name="bprice" id="bprice" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="结束价格" name="eprice" id="eprice" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                </div>
+                <div class="list-block-title">尺寸(CM)</div>
+                <div class="list-block row">
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="起始宽度" name="bwidth" id="bwidth" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="结束宽度" name="ewidth" id="ewidth" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="起始高度" name="bheight" id="bheight" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                    <span class="button col-50 much">
+                        <input type="number" placeholder="结束高度" name="eheight" id="eheight" min="0" inputmode="numeric" pattern="[0-9]*">
+                    </span>
+                </div>
+                <div class="list-block-title">销售状态</div>
+                <div class="list-block row">
+                    <span class="button col-25 status_choose active" data-id="0">全部</span>
+                    <span class="button col-25 status_choose" data-id="1">未售</span>
+                    <span class="button col-25 status_choose" data-id="2">已售</span>
+                    <span class="button col-25 status_choose" data-id="3">可议价</span>
+                    <span class="button col-25 status_choose" data-id="4">非卖品</span>
+                </div>
+                <div class="list-block-title">发货时间</div>
+                <div class="list-block row">
+                    <span class="button col-25 shipping_choose active" data-id="0">全部</span>
+                    <span class="button col-25 shipping_choose" data-id="2">48小时</span>
+                    <span class="button col-25 shipping_choose" data-id="7">一周</span>
+                </div>
+                <div class="list-block btn row " style="height:2.2rem;">
+                    
+                </div>
+
+            </div>
+            <div class="list-block btn row list-block_menu">
+                    <a href="#" class="col-50 reset_btn">重置</a>
+                    <a href="#" class="col-50" id="btn_work_filter" style="color:#fff;">确定</a>
+                </div>
+        </div>
+
+        <!-- 你的html代码 -->
+        <script type='text/javascript' src='{$resource_path}/light7/js/jquery.js' charset='utf-8'></script>
+        <script type="text/javascript">$.config = {router: false}</script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7.js' charset='utf-8'></script>
+        <script type='text/javascript' src='{$resource_path}/light7/js/light7-swiper.js' charset='utf-8'></script>
+
+        <script>
+                        $(function () {
+                            $('.list-block span').on('click', function () {
+                                $(this).addClass('active').siblings().removeClass('active active1');
+                            });
+                            $('.list-block .much').on('click', function () {
+                                $(this).addClass('active1').siblings().removeClass('active1');
+                                $(this).children('input').focus();
+                            })
+                        });
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function ($) {
+                sessionStorage.cat_choose = 0;
+                sessionStorage.topic_choose = 0;
+                sessionStorage.price_choose = 0;
+                sessionStorage.status_choose = 0;
+                sessionStorage.shipping_choose = 0;
+                sessionStorage.bprice = 0;
+                sessionStorage.eprice = 0;
+                sessionStorage.bwidth = 0;
+                sessionStorage.ewidth = 0;
+                sessionStorage.bheight = 0;
+                sessionStorage.eheight = 0;
+
+            });
+
+            $(function () {
+                //初始化
+                $.init();
+//                $(document).on('click', '.open-preloader-title', function () {
+//                    $.showPreloader('跳转中');
+//                    setTimeout(function () {
+//                        $.hidePreloader();
+//                    }, 1000);
+//                });
+
+
+
+                $(document).on('click', '.cat_choose', function () {
+                    sessionStorage.cat_choose = $(this).attr("data-id");
+                });
+
+                $(document).on('click', '.topic_choose', function () {
+                    sessionStorage.topic_choose = $(this).attr("data-id");
+                });
+
+                $(document).on('click', '.price_choose', function () {
+                    sessionStorage.price_choose = $(this).attr("data-id");
+                });
+
+                $(document).on('click', '.status_choose', function () {
+                    sessionStorage.status_choose = $(this).attr("data-id");
+                });
+
+                $(document).on('click', '.shipping_choose', function () {
+                    sessionStorage.shipping_choose = $(this).attr("data-id");
+                });
+
+                $(document).on('change', '#bprice', function () {
+                    sessionStorage.bprice = $(this).val();
+                });
+                $(document).on('change', '#eprice', function () {
+                    sessionStorage.eprice = $(this).val();
+                });
+                
+                $(document).on('change', '#bwidth', function () {
+                    sessionStorage.bwidth = $(this).val();
+                });
+                $(document).on('change', '#ewidth', function () {
+                    sessionStorage.ewidth = $(this).val();
+                });
+                
+                $(document).on('change', '#bheight', function () {
+                    sessionStorage.bheight = $(this).val();
+                });
+                $(document).on('change', '#eheight', function () {
+                    sessionStorage.eheight = $(this).val();
+                });
+                
+                //重置所有的选项
+                $(document).on('click', '.reset_btn', function () {
+                    $(".cat_choose:first").click();
+                    $(".topic_choose:first").click();
+                    $(".price_choose:first").click();
+                    $(".status_choose:first").click();
+                    $(".shipping_choose:first").click();
+                    $("#bprice").val("");
+                    $("#eprice").val("");
+                    
+                    $("#bwidth").val("");
+                    $("#ewidth").val("");
+                    $("#bheight").val("");
+                    $("#eheight").val("");
+                    
+                });
+                
+                //添加到购物车
+                $(document).on("click",'.shopping',function(){
+                    var url = "{:U('Shoppingcart/add')}";
+                    var id = $(this).attr("data-id");
+//                    $.showPreloader('处理中');
+                    
+                    
+                    $.ajax({
+                    type: 'post',
+                            url: url,
+                            data: {type: 1, id:id},
+                            dataType: 'json',
+                            success: function (data) {
+//                                $.hidePreloader();                    
+                                $.toast(data.msg);
+                            
+                            }
+                    });
+                });
+
+            });
+
+            $(document).on("click", "#btn_work_filter", function () {
+                window.location.href = "{:U('M/Work/rent')}?cat_choose=" + sessionStorage.cat_choose + "&topic_choose=" + sessionStorage.topic_choose + "&price_choose=" + sessionStorage.price_choose + "&status_choose=" + sessionStorage.status_choose + "&bprice=" + sessionStorage.bprice + "&shipping_choose=" + sessionStorage.shipping_choose + "&eprice=" + sessionStorage.eprice+ "&bwidth=" + sessionStorage.bwidth+ "&ewidth=" + sessionStorage.ewidth+ "&bheight=" + sessionStorage.bheight+ "&eheight=" + sessionStorage.eheight;
+//                        $.get("__SELF__", "cat_choose="+sessionStorage.cat_choose+"&topic_choose="+sessionStorage.topic_choose+"&price_choose="+sessionStorage.price_choose+"&status_choose="+sessionStorage.status_choose+"&bprice="+sessionStorage.bprice+"&shipping_choose="+sessionStorage.shipping_choose+"&eprice="+sessionStorage.eprice, function (data) {
+//                            if (data.err == 0) {
+//                                console.log("OK");
+//
+//                            } else {
+//
+//                            }
+//                        }, "json"); 
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                var loading = false;
+                var maxItems = 100;
+
+                var itemsPerLoad = 30;
+                var pagecount = 0;
+
+                function addItems(number, lastIndex) {
+                    var url = "{:U('get_works')}";
+                    var cat_id = "{$cat_id}";
+                    $.ajax({
+                        type: 'get',
+                        url: url,
+                        data: {pagecount: pagecount, cat_id: cat_id},
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.err == 0) {
+                                $.each(data.content, function (i, item) {
+                                    console.log(item.thumb);
+                                    var html = "";
+                                    html = '<li class="open-preloader-title" ' + 'onclick=javascript:window.location.href="' + '{:U("Work/detail")}?type=rent&id=' + item.work_id + '"' + '><img src = '
+                                            + item.thumb + '><div style="display:block;line-height:0.7rem;font-size:0.6rem;"><span>' + item.name + '</span><span style="display:block; font-size:0.6rem; color:#c72b2c;">￥'+item.buy_price+'</span></div></li>';
+                                    $minUl = getMinUl();
+                                    $minUl.append(html);
+                                });
+
+//                        }  
+                            } else {
+                                $('.infinite-scroll-preloader').remove();
+//                           alert(data.msg);
+                            }
+                        }
+                    });
+
+                    pagecount++;
+
+
+
+                }
+                addItems(itemsPerLoad, 0);
+
+
+                var lastIndex = 20;
+
+                $(document).on('infinite', '.infinite-scroll', function () {
+
+                    // 如果正在加载，则退出
+                    if (loading)
+                        return;
+
+                    // 设置flag
+                    loading = true;
+
+                    setTimeout(function () {
+                        loading = false;
+
+                        if (lastIndex >= maxItems) {
+                            $.detachInfiniteScroll($('.infinite-scroll'));
+                            $('.infinite-scroll-preloader').remove();
+                            return;
+                        }
+                        $minUl = getMinUl();
+                        addItems(itemsPerLoad, lastIndex);
+                        lastIndex = $('.list-container li').length;
+                    }, 1000);
+                });
+
+                function getMinUl() {
+                    var $arrUl = $(".content .list-container");
+                    var $minUl = $arrUl.eq(0);
+                    $arrUl.each(function (index, elem) {
+                        if ($(elem).height() < $minUl.height()) {
+                            $minUl = $(elem);
+                        }
+                    });
+                    return $minUl;
+                }
+                
+
+            });
+
+
+        </script>
+
+    </body>
+</html>

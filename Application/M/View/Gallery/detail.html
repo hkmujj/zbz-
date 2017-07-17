@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        html {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 320px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+        @media only screen and (min-width: 375px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+        @media only screen and (min-width: 400px) {
+            html {
+                font-size: 19.2px !important;
+            }
+        }
+        @media only screen and (min-width: 414px) {
+            html {
+                font-size: 19.872px !important;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            html {
+                font-size: 23.04px !important;
+            }
+        }
+
+
+        .bar {
+            position: fixed;
+            border-bottom: 0px solid #e7e7e7;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            color: #fff;
+        }
+        .bar a{
+            color: #fff;
+        }
+        .bar-nav ~ .content {
+            top: 0rem;
+        }
+        .content-block {
+            padding: 0 0rem;
+            margin: 0;
+            color: #6d6d72;
+            /*height: 100%;*/
+        }
+        .down_icon{
+            position: absolute;
+            bottom: 1.4rem;
+            left: 45%;
+            width: 10%;
+            height: 6%;
+            background: url("{$resource_path}/image/detail_image/001.png") no-repeat;
+            background-size: contain;
+        }
+        .banner_img {
+            height: 12rem;
+            margin: 0;
+            font-size: .85rem;
+            background: url("{$gallery.thumb}") no-repeat;
+            background-size: cover;
+        }
+        .paint_content{
+
+            background: white;
+            margin: .5rem 0;
+            padding: 0.75rem;
+            font-size: .85rem;
+        }
+        .paint_content h4{
+            color: #4f5458;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+        .paint_content span{
+            display: block;
+            text-indent: 1.6rem;
+            color: #4f5458;
+            font-size: 0.75rem;
+        }
+        .map_img span{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+
+        }
+    </style>
+    <style type="text/css">
+            .infinite-scroll-preloader {
+                margin-top:-20px;
+            }
+            .list-block ul{
+                width: 47%;list-style:none;float:left;margin-right:3%; background-color: #efeff4;
+            }
+            
+            .list-block ul li{margin-bottom:20px; background-color: #ffffff; text-align:center;}
+            .list-block ul li img{width:96%;margin-top:2%;}
+             a{color:#fff;}
+            
+            .content a{color:#3d4145}
+            .card-footer{
+                border-bottom: none;
+                border-top: none;
+            }
+            .card{
+                max-height:21rem;
+                overflow: hidden;
+            }
+            
+            .card-header.no-padding{
+                max-height: 16rem;
+                overflow: hidden;
+            }
+            
+            
+        </style>
+
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a href="javascript:history.go(-1);" class="button button-link button-nav pull-left">
+                <span class="icon icon-left"></span>
+               
+            </a>
+            <h1 class="title">
+                {$gallery.gallery_name}
+            </h1>
+            <a class="pull-right" href="{:U('Index/index')}">
+                <span class="icon icon-home"></span>
+                
+            </a>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+        <!-- 这里是页面内容区 -->
+        <div class="content" style='background-image: url("{$gallery.backgroudimg}");background-size:100% 100%;background-position: center;background-repeat: no-repeat;background-attachment: fixed;'>
+            <div class="content-block" style="height: 100%;">
+                <div class="down_icon"></div>
+            </div>
+            <div class="content-block" id="content_H" style="background: rgba(236, 236, 236, 1)">
+                <div class="list-block banner_img"></div>
+<!--                <div class="list-block paint_content">
+                    <h4>{$gallery.gallery_name}</h4>
+                    <span> {$gallery.brief}</span>
+                </div>-->
+                <div class="list-block map_img">
+                    <span><img src="{$resource_path}/image/detail_image/002.png" alt="" width="75"></span>
+                    <span>{$gallery.address}</span>
+                    <span>
+                        <a href="{:U('map',array('id'=>$gallery['gallery_id']))}" style="color: #c72b2c;">地图显示 <i class="icon icon-right" style="font-size: 0.7rem"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            
+            <volist name="works" id="vo">
+                <div class="card demo-card-header-pic" style="user-select: text;" onclick=javascript:window.location.href="{:U('Work/detail')}?id={$vo['work_id']}">
+                    <div valign="bottom" class="card-header color-white no-border no-padding" style="user-select: text;">
+                        <img class="card-cover" src="{$vo['thumb']}" alt="" style="user-select: text;">
+                    </div>
+                    <div class="card-footer" style="user-select: text; border-bottom: none;">
+                        <a href="{:U('detail',array('id'=>$vo['work_id']))}" class="link" style="user-select: text; font-size: 0.8rem;font-weight: 400;">{$vo['name']}</a>
+                        <span class=" pull-right" style="color:#c72b2c;font-size: 0.9rem;font-weight: 400;">￥{$vo['buy_price']}</span>
+                    </div>
+                    <div class="card-footer" style="user-select: text; padding-top: 0;">
+                        <a href="#" class="link" style="user-select: text;">
+                            {$vo['artist_name']} {$vo['wwidth']}*{$vo['wheight']}CM
+                        </a>
+                        <a href="{:U('detail',array('id'=>$vo['work_id']))}" class="button pull-right" style="color:#fff; background-color:#c72b2c; border-color: #c72b2c; ">购买</a>
+                    </div>
+                </div>
+                </volist>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+    <script>
+        $(function () {
+            var H = $(window).height();//屏幕高
+            var cont_H = $("#content_H").outerHeight();
+            if(cont_H < H){
+                $("#content_H").css("height","100%")
+            }else {
+                $("#content_H").css("overflow","hidden")
+            }
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>

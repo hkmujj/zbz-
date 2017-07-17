@@ -1,0 +1,257 @@
+[ 2017-05-10T09:33:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007914s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011842s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0776s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0126s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000318s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076348s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.031527s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.031598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001865s ]
+
+[ 2017-05-10T09:33:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000513s ]
+
+[ 2017-05-10T09:33:15+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011340s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2017-05-10T09:33:16+08:00 ] 127.0.0.1 /index.php/Home/Index/artist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000284s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 82 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 83 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 84 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 85 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\67cdea4ba7f67b31b6e0a4f8eed752a2.php 第 86 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029454s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002619s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002730s ]
+
+[ 2017-05-10T09:33:17+08:00 ] 127.0.0.1 /index.php/Home/Index/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_news` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `zbz_pc_news` ORDER BY ctime desc LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 114 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 115 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 116 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 117 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\cecb45903f8aa0e33f62e7ce7ef7b49f.php 第 118 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2017-05-10T09:33:18+08:00 ] 127.0.0.1 /index.php/Home/Index/profile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_pages` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `zbz_pc_pages` WHERE `type` = 2 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 132 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 133 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 134 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 135 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 136 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000457s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000485s ]
+
+[ 2017-05-10T09:33:20+08:00 ] 127.0.0.1 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_banners` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `zbz_pc_banners` ORDER BY ctime desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_index_img_lists` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'left_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'middle_img' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `zbz_pc_index_img_lists` WHERE `keywords` = 'right_img' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 148 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 149 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 150 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 151 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000493s ]
+
+[ 2017-05-10T09:33:22+08:00 ] 127.0.0.1 /index.php/Home/Index/profile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_pages` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `zbz_pc_pages` WHERE `type` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 132 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 133 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 134 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 135 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\146034eace9f7ee62e7898101e742bd2.php 第 136 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005829s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2017-05-10T09:33:23+08:00 ] 127.0.0.1 /index.php/Home/Index/honor.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `zbz_pc_pages` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `zbz_pc_pages` WHERE `type` = 3 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\1f1cda5a1384e2c708df4d83286b1fec.php 第 132 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\1f1cda5a1384e2c708df4d83286b1fec.php 第 133 行.
+NOTIC: [8] Use of undefined constant artist - assumed 'artist' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\1f1cda5a1384e2c708df4d83286b1fec.php 第 134 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\1f1cda5a1384e2c708df4d83286b1fec.php 第 135 行.
+NOTIC: [8] Use of undefined constant profile - assumed 'profile' E:\phpStudy\WWW\foodcase\Application\Runtime\Cache\Home\1f1cda5a1384e2c708df4d83286b1fec.php 第 136 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017120s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+

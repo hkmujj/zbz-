@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page" >
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+                <span class="icon icon-left"></span>
+
+            </a>
+            <h1 class="title">
+               收货地址
+            </h1>
+            <a class="button button-link button-nav pull-right" href="{:U('Member/address_add')}">
+                <span class="icon icon-edit"></span>
+
+            </a>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+
+        <div class="content">
+            <div class="list-block media-list" style="margin-top: 0;">
+                <ul>
+                    <volist name="address_res" id="vo">
+                        <li>
+                            <a href="#" class="item-link item-content address_item" data-id="{$vo['id']}">
+                                <div class="item-inner">
+                                    <div class="item-title-row">
+                                        <div class="item-title">{$vo['contact']}&nbsp;&nbsp;<span style=" font-size: 0.7rem; font-weight: normal;">{$vo['contact_mobile']}</span></div>
+                                    </div>
+                                    <div class="item-subtitle">{$vo['address']}</div>
+                                </div>
+                            </a>
+                        </li>  
+                        </volist>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+<script>
+$(document).on("click",".address_item",function(){
+    var id = $(this).attr('data-id');
+    $.confirm('确认删除地址?', function () {
+          $.post("{:U('address_del')}", "id="+id, function (data) {
+            if (data.err == 0) {
+                
+                window.location.reload();
+
+            } else {
+                $.alert(data.msg);
+            }
+        }, "json"); 
+      });
+    
+});   
+</script>
+
+</body>
+</html>

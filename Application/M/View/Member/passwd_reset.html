@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <include file="Common/head" />
+    <style>
+        .list-block{
+            padding: 0 0.75rem;
+        }
+        .list-block ul{
+            border-radius: 0.3rem;
+        }
+        .list-block .item-content {
+            padding-left: 0rem;
+        }
+        .list-block .item-inner {
+            padding-left: 0.75rem;
+        }
+        .list-block .item-title.label {
+            width: 21%;
+        }
+        /* .row .col-50 {
+             padding: 0 2%;
+             width: 50%;
+             margin-left: 0%;
+         }*/
+        .content-block {
+            padding: 0rem;
+        }
+
+        .button-danger.button-fill {
+            color: red;
+            background-color: transparent;
+        }
+        .btn{
+            margin-top: 1rem;
+        }
+        .btn .button {
+            height: 2rem;
+            font-size: .7rem;
+            line-height: 2rem;
+            color: #fff;
+            background: #e31a2c;
+            border: 0px solid #0894ec;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="{:U('Member/index')}">
+                <span class="icon icon-left"></span>
+                
+            </a>
+            <h1 class="title">
+                设置密码
+            </h1>
+
+        </header>
+
+        <!-- 工具栏 -->
+
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <div class="list-block">
+                <form id="myForm">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">原密码</div>
+                                    <div class="item-input">
+                                        <input type="text" name='oldpasswd' id="oldpasswd" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">新密码</div>
+                                    <div class="item-input">
+                                        <input type="text" name='newpasswd' id="newpasswd"  placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">再一次</div>
+                                    <div class="item-input">
+                                        <input type="text" name='newpasswd2'  id="newpasswd2" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="content-block">
+                        <div class="btn">
+                            <input class="button btn_submit btn_reset_passwd" type="button" value="立即绑定">
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<include file="Common/footer" />
+
+<script>
+    $(document).on('click', '.btn_reset_passwd', function () {
+        //判断是否为空,判断是否密码相同
+        var oldpasswd = $("#oldpasswd").val();
+        var newpasswd = $("#newpasswd").val();
+        var newpasswd2 = $("#newpasswd2").val();
+
+
+        if (oldpasswd.length > 0)
+        {
+            if ((newpasswd != newpasswd2))
+            {
+                $.toast("两次输入新密码不一致");
+                return false;
+            } else
+            {
+                if ((newpasswd.length >= 6) && (newpasswd.length <= 10))
+                {
+                    var flag = true;
+                    if (flag)
+                    {
+                        $.post("{:U('passwd_reset')}", $('#myForm').serialize(), function (data) {
+                            if (data.err == 0) {
+                                //                    $.alert(data.msg);
+                                $.toast(data.msg);
+                                window.location.reload();
+                            } else {
+                                $.alert(data.msg);
+                            }
+                        }, "json");
+                    } else
+                    {
+                        $.toast('手机号码错误');
+                    }
+                } else
+                {
+                    $.toast('新密码长度不够,请输入6~10位新密码');
+                }
+
+            }
+        } else
+        {
+            $.toast("请输入原密码");
+            return false;
+        }
+
+
+
+
+
+    });
+
+    $(document).on('click', '.btn_reset_input', function () {
+
+    });
+</script>
+
+</body>
+</html>
